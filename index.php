@@ -1,8 +1,8 @@
 <?php 
 session_start();
 include ('./bdd.php');
-// 2- User Registration
 
+// 1- User Registration
 	if (isset($_POST['submit'])) {
 		if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['email']) && !empty($_POST['mdp']) && !empty($_POST['confirmMdp']) && !empty($_POST['pseudo'])) {
 
@@ -25,8 +25,7 @@ include ('./bdd.php');
 						if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 							if ($mdp === $confirmMdp) {
 								$password = password_hash($mdp, PASSWORD_BCRYPT);
-								
-								
+																
 								$insert = $bdd->prepare("INSERT INTO user(nom, surName, email, mdp, pseudo, role) VALUES (:nom, :surName, :email, :mdp, :pseudo, :role)"); 							
 								$verif = $insert->execute(array('nom'=>$name, 'surName'=>$surname, 'email'=>$email, 'mdp'=>$password, 'pseudo'=>$pseudo, 'role'=>$role)); 
 									var_dump($name, $surname, $email, $password, $pseudo, $role);
