@@ -20,7 +20,7 @@ if ($task == "write") {
 	function getMessages(){
 		global $bdd; // Récupère la bdd qui es en dehors de la function
 // 2-On crée une function (requête bdd) pour afficher les 20 derniers messages
-		$result = $bdd->query('SELECT * FROM chat ORDER BY created_at DESC LIMIT 5');
+		$result = $bdd->query('SELECT * FROM chat ORDER BY created_at DESC LIMIT 20');
 // 3-On traite les résultas
 		$messages = $result->fetchAll();
 // 4-On affiche les données sous forme de JSON

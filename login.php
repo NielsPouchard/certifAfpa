@@ -24,11 +24,12 @@ include ('./bdd.php');
 						$_SESSION['mdp'] = $data['mdp'];
 						$_SESSION['iduser'] = $data['iduser'];
 						$_SESSION['photo'] = $data['photo'];
+						/* $_SESSION['photo'] = $data['photo']; */
 
 						if ($data['role'] == 'userAdmin') {
-							header("Location: admin.php?id=".$_SESSION['pseudo']);
+							header("Location: admin.php?id=".$_SESSION['iduser']);
 							
-						}else header("Location: user.php?id=".$_SESSION['pseudo']);
+						}else header("Location: user.php?id=".$_SESSION['iduser']);
 					}											
 				}else header('Location: index.php?lgin_err=email');				
 			}else header('Location: index.php?login_err=already');			

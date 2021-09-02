@@ -24,70 +24,67 @@ if (!$_SESSION['mdp']) {
 
 	<header>
 		<div class="navigation">
-
 			<div class="logo_fk">
-				<img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" alt="">
+				<span>Fakebook</span>
 			</div>
 
 			<div class="bar_search">
-				<input type="search" name="search">
-				<button>Search</button>
+				<input type="search" name="search" placeholder="Chercher un ami">
+				<input type="submit" name="search" placeholder="Chercher" class="search">
 			</div>
 
-			<div class="pseudoUser">
-				<img src="<?= $_SESSION['photo']; ?>">	
+			<div class="pseudoUser">	
 				<?= $_SESSION['pseudo']; ?>
+				<img src="<?= $_SESSION['photo']; ?>" alt="">
+
 			</div>
 
 			<a href="logout.php"><button class="logout">Déconnexion</button></a>
-
 		</div>
 	</header>
 
 	<div class="main">
-		<div class="info_Profil">
 
-			<p>Information du profil</p>
-				<ul>
-					<li>Votre pseudo:</li><?= $_SESSION['pseudo']; ?>
-				</ul>
+		<section class="profileUpdate">
 
-			<p>Insérer une photo</p>
-				<form action="/upload.php" method="POST" enctype="multipart/form-data">
-					<input type="file" name="photo" id="photo">
-					<button type="submit" name="upload" value="upload">Upload</button>
-				</form>
-		</div>
+			<!-- 	UploadInfoUser -->
+			<form action="update.php" method="POST" class="sectionUpdate">
+				<input type="text" name="name" placeholder="Nom*">
+				<input type="text" name="surname" placeholder="Prénom*">
+				<input type="email" placeholder="Email*">
+				<input type="password" name="mdp" placeholder="Mot de passe*">
+				<input type="password" name="ConfirmMdp" placeholder="Confimation de mot de passe*">
+			</form>
 
+			<!-- 	UploadPicture -->
+			<p>Modifier ma photo de profile</p>
+			<form action="/upload.php" method="POST" enctype="multipart/form-data">
+				<input type="file" name="photo" id="photo">
+				<input type="submit" name="upload" value="upload">
+			</form>	
 
-		<h1>chat</h1>
+		</section>
 
-	<section class="chat">
-			<div class="messages">
-
-				<div class="message">
-					<span class="date">23:22</span>
-					<span class="pseudo">Niels</span> :
-					<span class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus magni quis aperiam molestiae, labore perferendis consequuntur nostrum perspiciatis placeat ex voluptas dignissimos, error saepe velit tenetur optio beatae dicta.</span>
+		<section class="chat">
+			<!-- 	ContentMessagesChat -->
+				<div class="messages">
+					<div class="message">
+						<span class="date">23:22</span>
+						<span class="pseudo">Niels</span> :
+						<span class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto repellendus magni quis aperiam molestiae, labore perferendis consequuntur nostrum perspiciatis placeat ex voluptas dignissimos, error saepe velit tenetur optio beatae dicta.</span>
+					</div>
 				</div>
-			</div>
 
-			<div class="user_input">
-				<form action="handler.php?task=write" method="POST" id="chat">
-					<input type="text" name="pseudo" id="pseudo" value=<?= $_SESSION['pseudo']; ?>>
-					<input type="text" name="content" id="content" placeholder="Votre message">
-					<button type="submit" name="go" value="write">Send !</button>
-				</form>
-			</div>
-	</section>
- 
+				<div class="user_input">
+					<form action="handler.php?task=write" method="POST" id="chat">
+						<input type="text" name="pseudo" id="pseudo" value=<?= $_SESSION['pseudo']; ?> >
+						<input type="text" name="content" id="content" placeholder="Votre message">
+						<button type="submit" name="go" value="write" class="go">Send !</button>
+					</form>
+				</div>
+		</section>
 	</div>
 
-
-
-
-
-	
 	<script src="./js/script.js"></script>
 </body>
 

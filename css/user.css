@@ -1,13 +1,10 @@
-*{
-	margin: 0;
-	padding: 0; 
-	box-sizing: border-box;
-}
 
 body{
-	
-	min-height: 100%;
 	font-family: 'Segoe UI'; 
+	margin: 0;
+	padding: 0; 	
+	
+	min-height: 100vh;
 }
 
 /* Header */
@@ -18,18 +15,38 @@ header{
 }
 
 .navigation{
-	display: flex;
-	justify-content: space-around;
 	padding: 20px;	
 	align-items: center;
+	text-align: center;
+	display: flex;	
+	justify-content: space-around;
 }
 
-.logo_fk img{
-	width: 10%;
-	padding: 0;
+.logo_fk span{
+	font-size: 40px;
 }
 
-.logout{
+.bar_search input{
+	width: 335px;
+	border-radius: 8px;
+}
+
+.bar_search .search{
+	width: 75px;
+	border-radius: 8px;
+}
+.pseudoUser{
+	padding: 0px;
+	width: 12%;
+}
+
+.pseudoUser img{ 
+	width: 55%;
+	border: 0px solid rgba(0, 0, 0, 1);
+	border-radius: 40%; 
+}
+
+.logout {
 	border-radius: 6px;
 	background: red;
 	color: white;
@@ -39,14 +56,73 @@ header{
 .main{
 	background: #ECEEFC;
 	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding:20px;
 }
 
-.info_Profil{
-
+/* Profile Update*/
+.profileUpdate{
+	width: 25%; 
+	background: white ;
+	border-radius: 15px;
 }
 
+.profileUpdate form input{
+	border-radius: 8px;
+	margin: 5px;
+	width: 250px;
+}
 
+/* chat */
+.chat{
+	 width: 50%; 
+	/* margin-left: 50%;
+    transform: translateX(-50%); */
+}
 
-.info_Profil ul li{
-	list-style-type: none;
+.chat .messages {
+  background-color: #4e71ba;
+  border-radius: 5px;
+  padding: 1em;
+  height: 30vh;
+  overflow: auto;
+}
+
+.chat .message {
+  color: white;
+  padding: 0.3em;
+}
+
+.chat .date, .pseudo {
+  font-weight: bold;
+}
+
+.chat .user_input form {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+.chat .user_input input, button {
+  padding: 0.5em;
+}
+
+.chat .user_input input {
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+#pseudo {
+  width: 20%;
+  display: none;
+}
+
+#content {
+  width: 80%;
+}
+
+.chat .user_input .go{
+  width: 20%;
+  border-radius: 8px;
 }
