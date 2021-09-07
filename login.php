@@ -15,20 +15,22 @@ include ('./bdd.php');
 
 			if ($row == 1) { // Le user existe
 				$data = $check->fetch(); // On stock les données dans $data
-				
+			
 				if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 					$password = password_verify($mdp, $data['mdp']);
-
+					
 					if ($password) {
-						$_SESSION['pseudo'] = $data['pseudo'];
-						$_SESSION['mdp'] = $data['mdp'];
 						$_SESSION['iduser'] = $data['iduser'];
+						$_SESSION['nom'] = $data['nom'];
+						$_SESSION['surName'] = $data['surName'];
+						$_SESSION['email'] = $data['email'];
+						$_SESSION['pseudo'] = $data['pseudo'];
+						$_SESSION['mdp'] = $data['mdp'];						
 						$_SESSION['photo'] = $data['photo'];
-						/* $_SESSION['photo'] = $data['photo']; */
 
 						if ($data['role'] == 'userAdmin') {
 							header("Location: admin.php?id=".$_SESSION['iduser']);
-							
+								
 						}else header("Location: user.php?id=".$_SESSION['iduser']);
 					}											
 				}else header('Location: index.php?lgin_err=email');				

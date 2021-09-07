@@ -24,13 +24,16 @@ if (isset($_POST['upload']) && isset($_FILES)) {
 					$data = $check->fetch();
 					$row = $check->rowCount();
 						
-					if ($row == 1) {
+					if ($row === 1) {
 						
 						$existPicture = $bdd->prepare("DELETE photo FROM user WHERE iduser = ?");
 						$existPicture->execute([$_SESSION['iduser']]);
 
 						$updatePicture = $bdd->prepare("UPDATE user SET photo = :photo WHERE iduser = :iduser"); 	
-						$updatePicture->execute(["photo"=>$target_file,"iduser" => $_SESSION['iduser']]);					
+						$updatePicture->execute([
+							"photo"=>$target_file,
+							"iduser" => $_SESSION['iduser']]);	
+											
 						$_SESSION['photo'] = $target_file;
 
 						if ($target_file){ 
@@ -45,8 +48,8 @@ if (isset($_POST['upload']) && isset($_FILES)) {
 						$_SESSION['photo'] = $target_file;
 					}
 
-				}else echo "Fichier trop volumineux (max 2Mo)";
-			}						
+				}else echo "Format non valide, veuillez choisir: 'jpg', 'jpeg', 'gif', 'png' ";	
+			}else echo "Fichier trop volumineux (max 2Mo)";						
 		}header('Location: user.php');				
 			
 }

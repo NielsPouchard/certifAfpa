@@ -28,7 +28,7 @@ include ('./bdd.php');
 																
 								$insert = $bdd->prepare("INSERT INTO user(nom, surName, email, mdp, pseudo, role) VALUES (:nom, :surName, :email, :mdp, :pseudo, :role)"); 							
 								$verif = $insert->execute(array('nom'=>$name, 'surName'=>$surname, 'email'=>$email, 'mdp'=>$password, 'pseudo'=>$pseudo, 'role'=>$role)); 
-									var_dump($name, $surname, $email, $password, $pseudo, $role);
+									
 								echo "Compte enregistré avec success";
 							}
 						}else echo "Format non valide";
@@ -70,7 +70,7 @@ include ('./bdd.php');
 				</form>
 
 				<div class="forget_password">
-					<a href="">Information de compte oublié ?</a>
+					<a href="forgot_password.php">Information de compte oublié ?</a>
 				</div>
 			</div>
 		</div>

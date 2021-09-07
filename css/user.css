@@ -3,89 +3,248 @@ body{
 	font-family: 'Segoe UI'; 
 	margin: 0;
 	padding: 0; 	
-	
+  box-sizing: border-box;
 	min-height: 100vh;
+  overflow: hidden;
 }
 
-/* Header */
-header{
-	background: #3B5998;
-	color: white;
-	width: 100%;
-}
-
-.navigation{
-	padding: 20px;	
-	align-items: center;
-	text-align: center;
-	display: flex;	
-	justify-content: space-around;
-}
-
-.logo_fk span{
-	font-size: 40px;
-}
-
-.bar_search input{
-	width: 335px;
-	border-radius: 8px;
-}
-
-.bar_search .search{
-	width: 75px;
-	border-radius: 8px;
-}
-.pseudoUser{
-	padding: 0px;
-	width: 12%;
-}
-
-.pseudoUser img{ 
-	width: 55%;
-	border: 0px solid rgba(0, 0, 0, 1);
-	border-radius: 40%; 
-}
-
-.logout {
-	border-radius: 6px;
-	background: red;
-	color: white;
-}
-
-/* main */
+ /* ----- MAIN ----- */
 .main{
 	background: #ECEEFC;
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	padding:20px;
+  min-height: 100vh;
+}
+ /* ----- LEFT PART START ----- */
+.leftSideMenu{
+  height: 100%;
 }
 
-/* Profile Update*/
-.profileUpdate{
-	width: 25%; 
-	background: white ;
-	border-radius: 15px;
+.menuBurger{
+  position: relative; 
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5 ease;
 }
 
-.profileUpdate form input{
-	border-radius: 8px;
-	margin: 5px;
-	width: 250px;
+.sidebar.close ~ .menuBurger{
+  left: 78px;
+  width: calc(100% - 78px);
 }
 
-/* chat */
+.menuBurger .burger{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.menuBurger .burger .fa-bars{
+  color: #3B5998;
+  margin: 0 15px;
+}
+/* sidebar start */
+.sidebar{
+  top: 0;
+  left: 0;
+  width: 260px; 
+  height: 100%;
+  background: #3B5998;
+  border-radius: 8px;
+}
+
+.sidebar a{
+  text-decoration: none; 
+  cursor: pointer;
+}
+
+.fa, .far, .fas{
+ cursor: pointer;
+ width: 20px;
+ color: #3B5998;
+}
+
+.sidebar .logo_details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .logo_details i{
+  font-size: 30px;
+  color: white;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.sidebar .logo_details .logo_name{
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar .nav_links{
+  height: 100%;
+  padding-top: 30px 0 150px 0;
+  overflow: auto;
+}
+
+.sidebar .nav_links::-webkit-scrollbar{
+  display: none;
+}
+
+.sidebar .nav_links li{
+  position: relative;
+  list-style: none;
+/*   transition: all 0.4s ease; */
+}
+
+.sidebar .nav_links li:hover{
+  background: #4e71ba;
+}
+
+.sidebar .nav_links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 20px;
+/*   transition: all 0.3s ease; */
+}
+
+.sidebar .nav_links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+
+.sidebar .nav_links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .nav_links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.sidebar .nav_links li .sub_menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #4e71ba;
+  display: none;
+}
+
+.sidebar .nav_links li.showMenu .sub_menu{
+  display: block;
+}
+
+.sidebar .nav_links li .sub_menu a{
+  color: white;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+/*   transition: all 0.3 ease; */
+}
+
+.sidebar .nav_links li .sub_menu a:hover{
+  opacity: 1;
+}
+
+.sidebar.close{
+  visibility: hidden;
+
+}
+
+.sidebar.close .nav_links li .sub_menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px ;
+  border-radius: 0 6px 6px 0;
+  /* transition: all 0.4s ease; */
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.sidebar.close .nav_links li:hover .sub_menu{
+  top: 0px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .nav_links li .sub_menu .link_name{
+  display: none;
+}
+
+.sidebar.close .nav_links li .sub_menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+/* sidebar end */
+/* Profile Update start */
+
+/* Profile Update end  */
+
+  /* ----- LEFT PART END ----- */
+  /* ----- MIDDLE PART START ----- */
+/*   post */
+.middleSide{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: #ECEEFC;
+}
+
+.postMain{
+  border-radius: 8px; 
+}
+
+.postHeader .postMain img{
+  width: 55%;
+	border: 0px solid rgba(0, 0, 0, 1);
+	border-radius: 40%; 
+}
+
+.postHeader .postMain .send{
+  border-radius: 8px;
+}
+
+.postHeader .postMain .post{
+  width: 70%;
+  border-radius: 8px;
+}
+
+.actuality{
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 100vh;
+}
+  /* ----- MIDDLE PART END ----- */
+  /* ----- RIGHT PART START ----- */
+.rightSide{
+  width: 40%;
+  margin: 0 auto;
+}
+
+/* messenger star */
 .chat{
-	 width: 50%; 
-	/* margin-left: 50%;
-    transform: translateX(-50%); */
+	 width: 100%; 
 }
 
 .chat .messages {
   background-color: #4e71ba;
   border-radius: 5px;
   padding: 1em;
-  height: 30vh;
   overflow: auto;
 }
 
@@ -126,3 +285,5 @@ header{
   width: 20%;
   border-radius: 8px;
 }
+/* messenger end*/
+  /* ----- RIGHT PART END ----- */

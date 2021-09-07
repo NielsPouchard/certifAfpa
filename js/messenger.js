@@ -1,16 +1,42 @@
 
+	let arrow = document.querySelectorAll(".arrow");
+	
+	for (var i = 0; i < arrow.length; i++) {
+		arrow[i].addEventListener("click", (e)=>{
+			e.preventDefault()
+			
+			let arrowParent = e.target.parentElement.parentElement;				
+			arrowParent.classList.toggle("showMenu");
+
+		});			
+	} 
+
+	let sidebar = document.querySelector(".sidebar");
+	let sidebarBtn = document.querySelector("#btdBurger");
+
+	sidebarBtn.addEventListener("click", (e)=>{
+		e.preventDefault();
+		console.log(e, "bonjour");
+		sidebar.classList.toggle("close");		
+	});
+ 
+
+
 // 1 -Function qui permet de récupérer les messages et de les afficher correctement
 function getMessages(){
 	// 2-Ell doit créer une requête Ajax pour se connecter au server, et au fichier handler.php
 	const requeteAjax = new XMLHttpRequest();
-	requeteAjax.open('GET', 'handler.php'); // La requête ira vers le handler.php
+	requeteAjax.open('GET', '../handler.php'); // La requête ira vers le handler.php
 	// 3- Quand elle reçoit les données, il doit les traiter (avec le JSON) et doit les afficher en html
 	requeteAjax.onload = function() { //Quand la réponse du server est chargée
-		const resultat = JSON.parse(requeteAjax.responseText); // On stock dans une variable ce que le server a répondu + Grâce à JSON.parse cela permet que le résultat ne soit pas une chaîne de caractères, de ce fait le texte pourrat être exploité par js
-		const html = resultat.map(function(message){
+		const results = JSON.parse(requeteAjax.responseText); // On stock dans une variable ce que le server a répondu + Grâce à JSON.parse cela permet que le résultat ne soit pas une chaîne de caractères, de ce fait le texte pourrat être exploité par js
+		const html = results.map(function(message){
+			console.log(message.created_at);
+			const $time = message.created_at.slice(11, message.created_at.length);
+			console.log($time);
 			return `
 				<div class="message">
-					<span class="date">${message.created_at}</span>
+					<span class="date">${$time}</span
 					<span class="pseudo">${message.pseudo}</span> :
 					<span class="content">${message.content}</span>
 				</div>
@@ -24,7 +50,6 @@ function getMessages(){
 	// 4- On renvoie la requête
 	requeteAjax.send();
 }
-
 
 // 1- On créer une function pour envoyer le nouveau message au serveur et raffraîchir les messages
 function postMessage(event){

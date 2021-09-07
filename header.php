@@ -15,8 +15,11 @@
 			</div>
 
 			<div class="bar_search">
-				<input type="search" name="search" placeholder="Chercher un ami">
-				<input type="submit" name="search" placeholder="Chercher" class="search">
+				<input type="search" name="search" placeholder="Chercher un ami" id="search_user">
+				<input type="submit" name="search" placeholder="Chercher" class="search" value="search">
+			</div>
+			<div>
+				<div id="result_search"></div>				
 			</div>
 
 			<div class="pseudoUser">	
@@ -27,5 +30,9 @@
 			<a href="logout.php"><button class="logout">Déconnexion</button></a>
 		</div>
 	</header>
+
+
+
+
 </body>
 </html>

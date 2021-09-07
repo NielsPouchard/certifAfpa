@@ -10,7 +10,7 @@ if (array_key_exists("task", $_GET)) {
 	 $task = $_GET['task'];
 }
 
-if ($task == "write") {
+if ($task === "write") {
 	postMessage();
 }else {
 	getMessages();
@@ -42,12 +42,14 @@ if ($task == "write") {
 
 // 3-Créer une requête pour insérer dans la bdd
 		$query = $bdd->prepare("INSERT INTO chat(created_at, pseudo, content, user_iduser) VALUES (:created_at, :pseudo, :content, :user_iduser)");
-		$date = new \DateTime();		
+		$date = new \DateTime();	
+		
+	
 		$created_at = (array)$date;	
 		$statement = $query->execute([			
 			"pseudo" => $pseudo,
 			"content" => $content,
-			"created_at" => $created_at['date'],
+			"created_at" => $date->format('Y-m-d H:i:s'),
 			"user_iduser" => $_SESSION['iduser'] 
 		]);
 		
