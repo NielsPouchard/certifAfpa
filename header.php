@@ -1,38 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<link rel="stylesheet" href="./css/header.css">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Header</title>
-</head>
-<body>
-		<header>
-		<div class="navigation">
-			<div class="logo_fk">
-				<span>Fakebook</span>
-			</div>
+<?php 
 
-			<div class="bar_search">
-				<input type="search" name="search" placeholder="Chercher un ami" id="search_user">
-				<input type="submit" name="search" placeholder="Chercher" class="search" value="search">
-			</div>
-			<div>
-				<div id="result_search"></div>				
-			</div>
+$searchBar = $bdd->query('SELECT * FROM user ORDER BY iduser DESC LIMIT 5');
 
-			<div class="pseudoUser">	
-				<?= $_SESSION['pseudo']; ?>
-				<img src="<?= $_SESSION['photo']; ?>" alt="">
-			</div>
+if (isset($_GET['searchBar']) && !empty($_GET['searchBar'])) {
 
-			<a href="logout.php"><button class="logout">Déconnexion</button></a>
+	$search =  htmlspecialchars($_GET['searchBar']);
+
+	$searchBar = $bdd->query('SELECT * FROM user WHERE email LIKE "%'.$search.'%" ORDER BY iduser');	
+
+	if ($searchBar->rowCount() === 0) {
+		$searchBar = $bdd->query('SELECT * FROM user WHERE CONCAT(nom, surName, pseudo) LIKE "%'.$search.'%" ORDER BY iduser DESC');
+	}
+}
+?>
+
+<header>
+	<div class="navigation">
+		<div class="logo_fk">
+			<span>Fakebook</span>
 		</div>
-	</header>
 
+		<div class="bar_search">
+			<form action=""  method="GET">
+				<input type="search" name="searchBar" placeholder="Chercher un ami" >
+				<input type="submit" placeholder="Chercher" class="search" value="search">
+			</form>
 
+			<div class="searchResults">
+				<ul>
+					<?php while($results = $searchBar->fetch()){ ?>						
+					<li> <?= $results['surName']?> <?= $results['nom']?> <?= $results['pseudo']?></li> 	
+					<?php } ?>
+				</ul>		
+			</div>		
+		</div>
 
+		
+		<div class="pseudoUser">	
+			<?= $_SESSION['pseudo']; ?>
+			<img src="<?= $_SESSION['photo']; ?>" alt="">
+		</div>
 
-</body>
-</html>
+		<a href="logout.php"><button class="logout">Déconnexion</button></a>
+	</div>
+</header>
+

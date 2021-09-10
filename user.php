@@ -2,7 +2,7 @@
 session_start();
 include('bdd.php');
 
-if (!$_SESSION['mdp']) {
+if (!$_SESSION['iduser']) {
 	header('Location: index.php');
 }
 ?>
@@ -10,7 +10,6 @@ if (!$_SESSION['mdp']) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="./css/user.css">
 	<meta charset="UTF-8">
@@ -99,9 +98,15 @@ if (!$_SESSION['mdp']) {
 		</div>
 	</div>	
 
+
 	
-	<script src="./js/messenger.js"></script>
+<script type ="text/javascript">
+    window.onload = function what(){
+        document.getElementById('hello').innerHTML = 'hi';
+    }
+</script>   
 	<script src="./js/searchUser.js"></script>
+	<script src="./js/menuBurger.js"></script>
 </body>
 
 </html>

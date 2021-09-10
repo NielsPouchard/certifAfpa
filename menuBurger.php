@@ -2,7 +2,7 @@
 	<div class="leftSideMenu">
 
 		<section class="menuBurger">
-			<i class="fas fa-bars" class="burger" id="btdBurger"></i>			
+			<button id="btdBurger"><i class="fas fa-bars" id="burger" ></i></button>					
 		</section>
 
 		<div class="sidebar">
@@ -37,7 +37,15 @@
 					<a href="">
 						<i class="fas fa-user-friends"></i>
 						<span class="link_name">Firends</span>
-					</a>						
+						<i class="fas fa-chevron-down arrow"></i>
+					</a>
+					<ul class="sub_menu">
+						<li>	
+							<a href=""><i class="fas fa-align-center"></i>Liste d'amis</a>	 
+							<a href=""><i class="fas fa-camera-retro"></i>Demande d'amis</a>	
+							<a href=""><i class="fas fa-video"></i>Autres utilisateurs</a>
+						</li>
+					</ul>						
 				</li>	
 				<li>
 					<a href="./messenger.php">

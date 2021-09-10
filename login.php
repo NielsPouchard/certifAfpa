@@ -24,8 +24,7 @@ include ('./bdd.php');
 						$_SESSION['nom'] = $data['nom'];
 						$_SESSION['surName'] = $data['surName'];
 						$_SESSION['email'] = $data['email'];
-						$_SESSION['pseudo'] = $data['pseudo'];
-						$_SESSION['mdp'] = $data['mdp'];						
+						$_SESSION['pseudo'] = $data['pseudo'];						
 						$_SESSION['photo'] = $data['photo'];
 
 						if ($data['role'] == 'userAdmin') {

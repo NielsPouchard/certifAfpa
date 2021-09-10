@@ -7,6 +7,65 @@ body{
 	min-height: 100vh;
   overflow: hidden;
 }
+/* HEADER */
+
+header{
+	background: #3B5998;
+	color: white;
+	width: 100%;
+}
+
+.navigation{
+	padding: 20px;	
+	align-items: center;
+	text-align: center;
+	display: flex;	
+	justify-content: space-around;
+}
+
+.logo_fk span{
+	font-size: 40px;
+}
+
+.bar_search input{
+	width: 335px;
+	border-radius: 8px;
+}
+
+.bar_search .search{
+	width: 75px;
+	border-radius: 8px;
+}
+
+.searchResults{
+  background: white;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  width: 335px;
+  border-radius: 8px;
+}
+
+.searchResults li{
+  list-style: none;
+}
+
+.pseudoUser{
+	padding: 0px;
+	width: 12%;
+}
+
+.pseudoUser img{ 
+	width: 55%;
+	border: 0px solid rgba(0, 0, 0, 1);
+	border-radius: 40%; 
+}
+
+.logout {
+	border-radius: 6px;
+	background: red;
+	color: white;
+}
 
  /* ----- MAIN ----- */
 .main{
@@ -34,21 +93,22 @@ body{
   width: calc(100% - 78px);
 }
 
-.menuBurger .burger{
+.menuBurger #burger{
   height: 60px;
   display: flex;
   align-items: center;
 }
 
-.menuBurger .burger .fa-bars{
+.menuBurger #burger .fa-bars{
   color: #3B5998;
   margin: 0 15px;
 }
+
 /* sidebar start */
 .sidebar{
   top: 0;
   left: 0;
-  width: 260px; 
+  width: 280px; 
   height: 100%;
   background: #3B5998;
   border-radius: 8px;
@@ -100,7 +160,6 @@ body{
 .sidebar .nav_links li{
   position: relative;
   list-style: none;
-/*   transition: all 0.4s ease; */
 }
 
 .sidebar .nav_links li:hover{
@@ -114,7 +173,6 @@ body{
   line-height: 50px;
   color: white;
   font-size: 20px;
-/*   transition: all 0.3s ease; */
 }
 
 .sidebar .nav_links li.showMenu i.arrow{
@@ -134,7 +192,7 @@ body{
 }
 
 .sidebar .nav_links li .sub_menu{
-  padding: 6px 6px 14px 80px;
+ /*  padding: 6px 6px 14px 80px; */
   margin-top: -10px;
   background: #4e71ba;
   display: none;
@@ -150,7 +208,6 @@ body{
   padding: 5px 0;
   white-space: nowrap;
   opacity: 0.6;
-/*   transition: all 0.3 ease; */
 }
 
 .sidebar .nav_links li .sub_menu a:hover{
@@ -169,7 +226,6 @@ body{
   margin-top: 0;
   padding: 10px 20px ;
   border-radius: 0 6px 6px 0;
-  /* transition: all 0.4s ease; */
   opacity: 0;
   pointer-events: none; 
 }
@@ -190,10 +246,6 @@ body{
   display: block;
 }
 /* sidebar end */
-/* Profile Update start */
-
-/* Profile Update end  */
-
   /* ----- LEFT PART END ----- */
   /* ----- MIDDLE PART START ----- */
 /*   post */
@@ -264,7 +316,8 @@ body{
 }
 
 .chat .user_input input, button {
-  padding: 0.5em;
+  border: none;
+  cursor: pointer;
 }
 
 .chat .user_input input {

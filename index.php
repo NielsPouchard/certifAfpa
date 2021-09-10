@@ -37,8 +37,6 @@ include ('./bdd.php');
 			}else echo "Compte déja crée, veuillez vous connecter";
 		}else echo "Veuillez compléter tous les champs*";
 	}
-
-
 ?>
 
 <!DOCTYPE html>
