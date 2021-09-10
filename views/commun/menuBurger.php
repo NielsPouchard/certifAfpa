@@ -1,6 +1,5 @@
 
 	<div class="leftSideMenu">
-
 		<section class="menuBurger">
 			<button id="btdBurger"><i class="fas fa-bars" id="burger" ></i></button>					
 		</section>
@@ -62,3 +61,5 @@
 			</ul>
 		</div>
 	</div>
+
+	<script src="../view/js/menuBurger.js"></script>

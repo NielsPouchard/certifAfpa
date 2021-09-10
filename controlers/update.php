@@ -38,15 +38,6 @@ if (isset($_POST['update'])){
 				
 			}else echo"Format email non valide";
 		}
-
-
-
-
-
-
-
-
-
 	}
 }
 	

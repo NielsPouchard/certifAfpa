@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include ('./bdd.php');
+include ('./controlers/bdd.php');
 
 // 1- User Registration
 	if (isset($_POST['submit'])) {
@@ -32,8 +32,8 @@ include ('./bdd.php');
 								echo "Compte enregistré avec success";
 							}
 						}else echo "Format non valide";
-					} else "Format trop long";
-				} else "Format trop long";
+					} else echo "Format trop long";
+				} else echo "Format trop long";
 			}else echo "Compte déja crée, veuillez vous connecter";
 		}else echo "Veuillez compléter tous les champs*";
 	}
@@ -43,7 +43,7 @@ include ('./bdd.php');
 <html lang="en">
 <head>
 	
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="./views/view/css/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,14 +61,14 @@ include ('./bdd.php');
 	<!-- Formulaire de connexion -->
 
 			<div class="login">
-				<form action="login.php" method="POST">
+				<form action="./controlers/login.php" method="POST">
 					<input type="email" name="email" placeholder="email*">
 					<input type="password" name="mdp" placeholder="password*">
 					<input type="submit" name="connexion" placeholder="Connexion" id="connexion">		
 				</form>
 
 				<div class="forget_password">
-					<a href="forgot_password.php">Information de compte oublié ?</a>
+					<a href="./views/view/forgot_password.php">Information de compte oublié ?</a>
 				</div>
 			</div>
 		</div>

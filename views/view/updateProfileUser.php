@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('bdd.php');
+include('../../controlers/bdd.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,14 +19,14 @@ include('bdd.php');
 
 	<!-- Header -->
 		<?php 
-		include('header.php');
+		include('./views/commun/header.php');
 		?>
 	<!-- Header -->
 
 	<div class="main">
 		 <!-- ----- LEFT PART START (Menu Burger)-----  -->
 			<?php 
-			include('menuBurger.php')
+			include('./views/commun/menuBurger.php')
 			?>
 		<!-- ----- LEFT PART END -----  -->
 
@@ -37,7 +37,7 @@ include('bdd.php');
 		<div class="middleSide">		
 			<section class="profileUpdate">			
 				<p>Modifier mon profile</p>
-				<form action="update.php" method="POST" class="sectionUpdate">
+				<form action="./../../controlers/update.php" method="POST" class="sectionUpdate">
 					<input type="text" name="name" value="<?= $_SESSION['nom']; ?>">
 					<input type="text" name="surname" value="<?= $_SESSION['surName']; ?>">
 					<input type="text" name="pseudo" value="<?= $_SESSION['pseudo']; ?>">
@@ -47,7 +47,7 @@ include('bdd.php');
 			
 				<!-- 	UploadPrdofilePictureUser -->
 				<p>Modifier ma photo de profile</p>				
-				<form action="/upload.php" method="POST" enctype="multipart/form-data">
+				<form action="./../../controlers/upload.php" method="POST" enctype="multipart/form-data">
 					<input type="file" name="photo" id="photo">
 					<input type="submit" name="upload" value="Upload">
 				</form>	

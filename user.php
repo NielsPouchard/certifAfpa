@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('bdd.php');
+include('./controlers/bdd.php');
 
 if (!$_SESSION['iduser']) {
 	header('Location: index.php');
@@ -11,7 +11,7 @@ if (!$_SESSION['iduser']) {
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="./css/user.css">
+	<link rel="stylesheet" href="./views/view/css/user.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,18 +20,18 @@ if (!$_SESSION['iduser']) {
 
 <body>
 
-	<!-- Header  -->
+	<!-- HEADER START -->
 		<?php 
-		include('./header.php');
+		include('./views/commun/header.php');
 		?>
-	<!-- Header  -->
+	<!-- HEADER END -->
 
 	<div class="main">
 		<!-- ----- LEFT PART START (Menu Burger) -----  -->
 		<?php 
-		include('./menuBurger.php');
+		include('./views/commun/menuBurger.php');
 		?>
-		<!-- ----- LEFT PART END -----  -->
+		<!-- -----   LEFT PART END   -----  -->
 		<!-- ----- MIDDLE PART START -----  -->
 		<div class="middleSide">
 			<!-- 	Post -->
@@ -98,15 +98,6 @@ if (!$_SESSION['iduser']) {
 		</div>
 	</div>	
 
-
-	
-<script type ="text/javascript">
-    window.onload = function what(){
-        document.getElementById('hello').innerHTML = 'hi';
-    }
-</script>   
-	<script src="./js/searchUser.js"></script>
-	<script src="./js/menuBurger.js"></script>
 </body>
 
 </html>

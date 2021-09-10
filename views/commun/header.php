@@ -41,7 +41,7 @@ if (isset($_GET['searchBar']) && !empty($_GET['searchBar'])) {
 			<img src="<?= $_SESSION['photo']; ?>" alt="">
 		</div>
 
-		<a href="logout.php"><button class="logout">Déconnexion</button></a>
+		<a href="../../controlers/logout.php"><button class="logout">Déconnexion</button></a>
 	</div>
 </header>
 
