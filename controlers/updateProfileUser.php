@@ -1,7 +1,7 @@
 <?php  
 session_start();
-include('bdd.php');
-
+require_once('./controlers/bdd.php'); 
+require_once('./controlers/utils.php');
 if (isset($_POST['update'])){
 	if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['pseudo']) && isset($_POST['email'])) {
 

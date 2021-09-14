@@ -1,6 +1,7 @@
 <?php 
 session_start();
-include('bdd.php');
+require_once('./controlers/bdd.php'); 
+require_once('./controlers/utils.php');
 
 if (isset($_POST['upload']) && isset($_FILES)) { 
 
@@ -24,8 +25,7 @@ if (isset($_POST['upload']) && isset($_FILES)) {
 						
 					if ($row === 1) {
 						
-						$existPicture = $bdd->prepare("DELETE photo FROM user WHERE iduser = ?");
-						$existPicture->execute([$_SESSION['iduser']]);
+						deletePicture($_SESSION);
 
 						$updatePicture = $bdd->prepare("UPDATE user SET photo = :photo WHERE iduser = :iduser"); 	
 						$updatePicture->execute([

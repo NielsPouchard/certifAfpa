@@ -1,6 +1,7 @@
 <?php  
-
-include('./bdd.php'); 
+session_start();
+require_once('./controlers/bdd.php'); 
+require_once('./controlers/utils.php');
 
 // 1- User Registration
 	if (isset($_POST['submit'])) {
@@ -24,8 +25,7 @@ include('./bdd.php');
 							if ($mdp === $confirmMdp) {
 								$password = password_hash($mdp, PASSWORD_BCRYPT);
 																
-								$insert = $bdd->prepare("INSERT INTO user(nom, surName, email, mdp, pseudo, role) VALUES (:nom, :surName, :email, :mdp, :pseudo, :role)"); 							
-								$verif = $insert->execute(array('nom'=>$name, 'surName'=>$surname, 'email'=>$email, 'mdp'=>$password, 'pseudo'=>$pseudo, 'role'=>$role)); 
+							insertUser(compact('name','surname','email','password','pseudo','role'));	 
 									
 								echo "Compte enregistré avec success";
 								header('./index.php');
