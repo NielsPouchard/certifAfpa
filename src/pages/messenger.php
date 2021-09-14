@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include('./bdd.php');
-require_once __DIR__.'/init.php';
+require_once('../../controlers/bdd.php');
+$bdd = getBdd();
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,8 @@
 <?php 
-require_once __DIR__.'/init.php';
+session_start();
+require_once('../../controlers/bdd.php');
+$bdd = getBdd();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

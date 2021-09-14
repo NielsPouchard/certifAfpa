@@ -1,3 +1,6 @@
-<?php 
-require_once __DIR__.'/init.php';
+<?php
+session_start();
+require_once('../../controlers/bdd.php');
+$bdd = getBdd(); 
+echo "Find friends here";
 ?>

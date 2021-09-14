@@ -1,15 +1,13 @@
 <?php 
 session_start();
-include ('./controlers/bdd.php');
-require_once __DIR__.'/init.php'; 
-
+require_once('../../controlers/bdd.php');
+$bdd = getBdd();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<link rel="stylesheet" href="./views/view/css/style.css">
+	<link rel="stylesheet" href="./css/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
