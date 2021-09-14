@@ -14,9 +14,7 @@ include('./bdd.php');
 			$pseudo = htmlspecialchars($_POST['pseudo']);
 			$role = 'userRole';
 
-			$check = $bdd->prepare('SELECT nom, surName, email, mdp, pseudo, role FROM user WHERE email = ?');
-			$check->execute(array($email));
-			$data = $check->fetch();
+			$data = checkUsers($idusers);
 			$row = $check->rowCount(); 
 			
 			if ($row === 0) { // Le user existe pas

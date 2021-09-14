@@ -11,7 +11,26 @@
 
 		return $bdd;
 	}
+
+	function checkUsers(int $iduser): array{
+		$bdd = getBdd();		
+		$check = $bdd->prepare("SELECT * FROM user WHERE iduser = ?");
+		$check->execute(array($iduser));			
+		$data = $check->fetch();
+
+		return $data;
+	}
+
 	
+	function selectPicture(int $target_file): array{
+		$bdd = getBdd();
+		$check = $bdd->prepare('SELECT photo FROM user WHERE iduser= ?');
+		$check->execute(array($target_file));
+		$picture = $check->fetch();
+
+		return $picture;
+}
+
 
 
 

@@ -19,9 +19,7 @@ if (isset($_POST['upload']) && isset($_FILES)) {
 				 $extensionValides = array('jpg', 'jpeg', 'gif', 'png'); 
 				if (in_array($photoExtension,$extensionValides)) {
 
-					$check = $bdd->prepare('SELECT photo FROM user WHERE iduser= ?');
-					$check->execute(array($target_file));
-					$data = $check->fetch();
+					$picture = selectPicture($target_file);
 					$row = $check->rowCount();
 						
 					if ($row === 1) {

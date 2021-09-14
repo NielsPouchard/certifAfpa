@@ -11,9 +11,7 @@ if (isset($_POST['update'])){
 		$email = htmlspecialchars($_POST['email']);
 		$iduser = $_SESSION['iduser'];
 
- 		$check = $bdd->prepare("SELECT nom, surName, email, pseudo FROM user WHERE iduser = ?");
-		$check->execute(array($iduser));			
-		$data = $check->fetch();
+		$data = checkUsers($iduser);
 		$row = $check->rowCount();
 		
 		if ($row === 1) {
