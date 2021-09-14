@@ -1,6 +1,8 @@
-<?php 
+<?php
 session_start();
-include('bdd.php');
+use App\Database\DB;
+
+$bdd = DB::getDb();
 
 // 1- Analyser la demande faite via l'url (GET) afin de déterminer si on souhaite récupérer les messages ou en écrire un
  $task = "list";
@@ -38,20 +40,20 @@ if ($task === "write") {
 
 		$pseudo = htmlspecialchars($_POST['pseudo']);
 		$content = htmlspecialchars($_POST['content']);
-		
+
 
 // 3-Créer une requête pour insérer dans la bdd
 		$query = $bdd->prepare("INSERT INTO chat(created_at, pseudo, content, user_iduser) VALUES (:created_at, :pseudo, :content, :user_iduser)");
-		$date = new \DateTime();	
-			
-		$created_at = (array)$date;	
-		$query->execute([			
+		$date = new \DateTime();
+
+		$created_at = (array)$date;
+		$query->execute([
 			"pseudo" => $pseudo,
 			"content" => $content,
 			"created_at" => $date->format('Y-m-d H:i:s'),
-			"user_iduser" => $_SESSION['iduser'] 
+			"user_iduser" => $_SESSION['iduser']
 		]);
-		
+
 // 4-Donner un statut du succes ou d'erreur au format JSON
 		echo json_encode(["status" => "success"]);
 	}

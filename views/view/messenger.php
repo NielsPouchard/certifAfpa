@@ -1,31 +1,26 @@
-<?php 
-session_start();
-include('./bdd.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="./css/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Messenger</title>
 </head>
 <body>
-	
-	<?php 
+
+	<?php
 	include('./header.php');
 	?>
 
 	<div class="main">
 
-		<?php 
+		<?php
 			include('./menuBurger.php');
 		?>
 			<div class="rightSide">
-				<section class="chat">			
+				<section class="chat">
 						<div class="messages">
 							<div class="message">
 								<span class="date"></span>
@@ -43,7 +38,7 @@ include('./bdd.php');
 				</section>
 			</div>
 	</div>
-	
+
 	<script src="./js/messenger.js"></script>
 </body>
 </html>

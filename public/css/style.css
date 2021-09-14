@@ -1,13 +1,13 @@
 *{
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 	box-sizing: border-box;
 }
 
 body{
-	
+
 	min-height: 100%;
-	font-family: 'Segoe UI'; 
+	font-family: 'Segoe UI';
 }
 
 /* Header */
@@ -20,7 +20,7 @@ header{
 .connection{
 	display: flex;
 	justify-content: space-around;
-	padding: 20px;	
+	padding: 20px;
 	align-items: center;
 }
 
@@ -51,7 +51,7 @@ header{
 	text-decoration: none;
 	color: white;
 	font-size: 14px;
-	
+
 }
 
 /* Main */
@@ -81,26 +81,26 @@ header{
 	width: 100%;
 }
 
-.inscritpion{
+.inscription{
 	width: 25%;
 	display: flex;
 	flex-direction: column;
 	align-items: center
 }
 
-.inscritpion form{
+.inscription form{
 	align-items: center;
 	text-align: center;
 }
 
-.inscritpion input{
+.inscription input{
 	margin: 5px;
 	padding: 3px;
 	border-radius: 6px;
 }
 
 
-.inscritpion #inscription{
+.inscription #inscription{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -142,5 +142,5 @@ header{
   .logo_fk img{
     display: none;
   }
-  
+
 }
