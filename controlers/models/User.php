@@ -1,18 +1,20 @@
 <?php
-require_once('./controlers/bdd.php');
+require_once __DIR__.'/../../controlers/bdd.php';
 
 class User {
 	
-	public function checkUsers(int $iduser): array{
-	$bdd = getBdd();		
-	$check = $bdd->prepare("SELECT * FROM user WHERE iduser = ?");
-	$check->execute(array($iduser));			
-	$data = $check->fetch();
-
-	return $data;
+	public function checkUsers(string $email): ?array
+	{
+		$bdd = getBdd();		
+		$check = $bdd->prepare("SELECT * FROM user WHERE email = ?");
+		$check->execute(array($email));			
+		$data = $check->fetch();
+	
+		return $data;
 	}
 
-	public function insertUser(array $variables=[]){
+	public function insertUser(array $variables=[])
+	{
 		$bdd = getBdd();
 		extract($variables);
 		$insert = $bdd->prepare("INSERT INTO user(nom, surName, email, mdp, pseudo, role) VALUES (:nom, :surName, :email, :mdp, :pseudo, :role)"); 		
@@ -20,7 +22,8 @@ class User {
 	}
 
 
-	public function updateUser(array $variables=[]){
+	public function updateUser(array $variables=[])
+	{
 		$bdd = getBdd();
 		extract($variables);
 		$updateDataUser = $bdd->prepare("UPDATE user SET nom = :name, surName = :surname, email = :email, pseudo = :pseudo WHERE iduser = :iduser"); 	

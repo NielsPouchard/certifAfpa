@@ -1,7 +1,8 @@
 <?php 
 session_start();
-require_once('./controlers/bdd.php'); 
-require_once('./controlers/models/Picture.php');
+require_once __DIR__.'/controlers/bdd.php';
+require_once __DIR__.'/controlers/models/User.php';
+require_once __DIR__.'/controlers/models/Picture.php';
 
 if (isset($_POST['upload']) && isset($_FILES)) { 
 

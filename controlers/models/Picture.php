@@ -1,5 +1,5 @@
 <?php
-require_once('./controlers/bdd.php');
+require_once __DIR__.'/../../controlers/bdd.php';
 
 class Picture{ 
 

@@ -1,6 +1,8 @@
 <?php 
-session_start();
-include ('./bdd.php');
+session_start(); 
+require_once __DIR__.'/../controlers/bdd.php';
+require_once __DIR__.'/../controlers/models/User.php'; 
+require_once __DIR__.'/../controlers/models/Picture.php';
 
 // 1-Login
 	if (isset($_POST['connexion'])) {
@@ -9,12 +11,10 @@ include ('./bdd.php');
 
 		if (!empty($_POST['email'])  && !empty($_POST['mdp'])) {
 
-			$data = $userModel->checkUsers($iduser);
-			$row = $check->rowCount(); // On va rechercher avec rowCount si le user existe dans la table
-
-			if ($row == 1) { // Le user existe
-				$data = $check->fetch(); // On stock les données dans $data
-			
+			$userModel = new User();
+			$data = $userModel->checkUsers($email);
+			$row = count($data); // On va rechercher avec rowCount si le user existe dans la table
+			var_dump($row);
 				if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 					$password = password_verify($mdp, $data['mdp']);
 					
@@ -27,13 +27,11 @@ include ('./bdd.php');
 						$_SESSION['photo'] = $data['photo'];
 
 						if ($data['role'] === 'userAdmin') {
-							header("Location: views/view/admin.php?id=".$_SESSION['iduser']);
+							header("Location: /../../admin.php?id=".$_SESSION['iduser']);
 								
-						}else header("Location: ./user.php?id=".$_SESSION['iduser']);
+						}else header("Location: /../../user.php?id=".$_SESSION['iduser']);
 					}											
-				}else header('Location: ./index.php');				
-			}else header('Location: ./index.php');			
-		}else header('Location: ./index.php');		
+				}else header('Location: /../../../index.php');						
+		}else header('Location: /../../../index.php');		
 	}
 
-?>

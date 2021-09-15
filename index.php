@@ -27,11 +27,10 @@ $map = [
 ];
 
 $path = $request->getPathInfo();
- var_dump(__DIR__.'/src/pages/'.$map[$path].".php");
-
+/*  var_dump(__DIR__.'/src/pages/'.$map[$path].".php");
+ */
 if (isset($map[$path])) {
-    ob_start();// Mise en tapon des données que l'on veut afficher
-   
+    ob_start();// Mise en tapon des données que l'on veut afficher  
     include __DIR__.'/src/pages/'.$map[$path].".php";
     $response->setContent(ob_get_clean());// On place tout ce qui a été afficher dans le tampon
 

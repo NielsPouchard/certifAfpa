@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include('bdd.php');
+require_once __DIR__.'/controlers/bdd.php';
+require_once __DIR__.'/controlers/models/User.php';
+require_once __DIR__.'/controlers/models/Picture.php';
 
 // 1- Analyser la demande faite via l'url (GET) afin de déterminer si on souhaite récupérer les messages ou en écrire un
  $task = "list";

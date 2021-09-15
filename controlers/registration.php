@@ -1,7 +1,8 @@
 <?php  
 session_start();
-require_once('./controlers/bdd.php'); 
-require_once('./controlers/models/User.php');
+require_once __DIR__.'/controlers/bdd.php';
+require_once __DIR__.'/controlers/models/User.php';
+require_once __DIR__.'/controlers/models/Picture.php';
 
 // 1- User Registration
 	if (isset($_POST['submit'])) {
@@ -15,7 +16,7 @@ require_once('./controlers/models/User.php');
 			$pseudo = htmlspecialchars($_POST['pseudo']);
 			$role = 'userRole';
 
-			$data = $userModel->checkUsers($idusers);
+			$userModel->checkUsers($idusers);
 			$row = $check->rowCount(); 
 			
 			if ($row === 0) { // Le user existe pas
