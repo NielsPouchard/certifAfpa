@@ -1,5 +1,5 @@
 <?php 
-include('./controlers/bdd.php');
+session_start();
 
 $searchBar = $bdd->query('SELECT * FROM user ORDER BY iduser DESC LIMIT 5');
 

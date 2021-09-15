@@ -10,14 +10,14 @@
 <body>
 	<!-- HEADER START -->
 		<?php 
-		include('./commun/header.php');
+			include __DIR__.'/commun/header.php';
 		?>
 	<!-- HEADER END -->
 
 	<div class="main">
 		<!-- ----- LEFT PART START (Menu Burger) -----  -->
 		<?php 
-		include('./commun/menuBurger.php');
+			include __DIR__.'/commun/menuBurger.php';
 		?>
 		<!-- -----   LEFT PART END   -----  -->
 

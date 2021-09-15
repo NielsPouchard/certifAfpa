@@ -27,8 +27,8 @@ $map = [
 ];
 
 $path = $request->getPathInfo();
- var_dump($map[$path]);
-die(); 
+ var_dump(__DIR__.'/src/pages/'.$map[$path].".php");
+
 if (isset($map[$path])) {
     ob_start();// Mise en tapon des données que l'on veut afficher
    

@@ -9,8 +9,7 @@ include ('./bdd.php');
 
 		if (!empty($_POST['email'])  && !empty($_POST['mdp'])) {
 
-			$check = $bdd->prepare('SELECT * FROM user WHERE email = ?');
-			$check->execute(array($email));
+			$data = $userModel->checkUsers($iduser);
 			$row = $check->rowCount(); // On va rechercher avec rowCount si le user existe dans la table
 
 			if ($row == 1) { // Le user existe
@@ -27,7 +26,6 @@ include ('./bdd.php');
 						$_SESSION['pseudo'] = $data['pseudo'];						
 						$_SESSION['photo'] = $data['photo'];
 
-						var_dump();
 						if ($data['role'] === 'userAdmin') {
 							header("Location: views/view/admin.php?id=".$_SESSION['iduser']);
 								

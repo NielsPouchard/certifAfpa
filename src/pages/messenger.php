@@ -12,13 +12,13 @@
 <body>
 	
 	<?php 
-	include('./header.php');
+		include __DIR__.'/commun/header.php';
 	?>
 
 	<div class="main">
 
 		<?php 
-			include('./menuBurger.php');
+			include __DIR__.'/commun/menuBurger.php';
 		?>
 			<div class="rightSide">
 				<section class="chat">			
