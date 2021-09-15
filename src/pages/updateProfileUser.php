@@ -1,10 +1,4 @@
-<?php 
-session_start();
-require_once('../../controlers/bdd.php');
-require_once('./controlers/utils.php');
-$bdd = getBdd();
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +15,14 @@ $bdd = getBdd();
 
 	<!-- Header -->
 		<?php 
-		include('./views/commun/header.php');
+		include('./commun/header.php');
 		?>
 	<!-- Header -->
 
 	<div class="main">
 		 <!-- ----- LEFT PART START (Menu Burger)-----  -->
 			<?php 
-			include('./views/commun/menuBurger.php')
+			include('./commun/menuBurger.php')
 			?>
 		<!-- ----- LEFT PART END -----  -->
 
@@ -58,7 +52,6 @@ $bdd = getBdd();
 		<!-- ----- MIDDLE PART END -----  -->
 	</div>
 
-	<script src="./js/script.js"></script>
 </body>
 
 </html>

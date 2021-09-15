@@ -1,9 +1,3 @@
-<?php 
-session_start();
-require_once('../../controlers/bdd.php');
-require_once('./controlers/utils.php');
-$bdd = getBdd();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +30,7 @@ $bdd = getBdd();
 							</div>
 						</div>
 						<div class="user_input">
-							<form action="handler.php?task=write" method="POST" id="chat">
+							<form action="../../controlers/handler.php?task=write" method="POST" id="chat">
 								<input type="text" name="pseudo" id="pseudo" value=<?= $_SESSION['pseudo']; ?> >
 								<input type="text" name="content" id="content" placeholder="Votre message">
 								<button type="submit" name="go" value="write" class="go">Send</button>

@@ -1,5 +1,6 @@
 <?php 
 include('./controlers/bdd.php');
+
 $searchBar = $bdd->query('SELECT * FROM user ORDER BY iduser DESC LIMIT 5');
 
 if (isset($_GET['searchBar']) && !empty($_GET['searchBar'])) {

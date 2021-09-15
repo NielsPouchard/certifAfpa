@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require_once('./controlers/bdd.php'); 
-require_once('./controlers/utils.php');
+require_once('./controlers/models/Picture.php');
 
 if (isset($_POST['upload']) && isset($_FILES)) { 
 
@@ -20,17 +20,13 @@ if (isset($_POST['upload']) && isset($_FILES)) {
 				 $extensionValides = array('jpg', 'jpeg', 'gif', 'png'); 
 				if (in_array($photoExtension,$extensionValides)) {
 
-					$picture = selectPicture($target_file);
+					$picture = $pictureModel->selectPicture($target_file);
 					$row = $check->rowCount();
 						
 					if ($row === 1) {
 						
-						deletePicture($_SESSION);
-
-						$updatePicture = $bdd->prepare("UPDATE user SET photo = :photo WHERE iduser = :iduser"); 	
-						$updatePicture->execute([
-							"photo"=>$target_file,
-							"iduser" => $_SESSION['iduser']]);	
+						$pictureModel->deletePicture($iduser);
+						$pictureModel->updateUserPicture(compact('target_file', 'iduser'));
 											
 						$_SESSION['photo'] = $target_file;
 
