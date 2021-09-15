@@ -1,7 +1,9 @@
 <?php  
 session_start();
-require_once('./controlers/bdd.php'); 
-require_once('./controlers/utils.php');
+require_once __DIR__.'/controlers/bdd.php';
+require_once __DIR__.'/controlers/models/User.php';
+require_once __DIR__.'/controlers/models/Picture.php';
+
 if (isset($_POST['update'])){
 	if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['pseudo']) && isset($_POST['email'])) {
 
@@ -11,21 +13,14 @@ if (isset($_POST['update'])){
 		$email = htmlspecialchars($_POST['email']);
 		$iduser = $_SESSION['iduser'];
 
-		$data = checkUsers($iduser);
+		$userModel->checkUsers($iduser);
 		$row = $check->rowCount();
 		
 		if ($row === 1) {
 		
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-					$updateDataUser = $bdd->prepare("UPDATE user SET nom = :name, surName = :surname, email = :email, pseudo = :pseudo WHERE iduser = :iduser"); 	
-					$user = $updateDataUser->execute([						
-						"name" => $name, 
-						"surname" => $surname, 
-						"email" => $email, 
-						"pseudo" => $pseudo,
-					 	"iduser" => $_SESSION['iduser'] 
-					]);	
+				
+				$userModel->updateUser(compact('name', 'surname', 'email', 'pseudo', 'iduser'));
 					
 					if ($user) {
 						$_SESSION['pseudo'] = $pseudo;

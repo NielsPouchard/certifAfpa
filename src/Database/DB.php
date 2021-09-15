@@ -16,8 +16,3 @@ class DB
 		return self::$_instance;
 	}
 }
-
-// 1-Connexion bdd
-
-
-?>

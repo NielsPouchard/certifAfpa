@@ -1,10 +1,7 @@
 <?php 
 session_start();
-require_once('../../controlers/bdd.php');
-require_once('./controlers/utils.php');
-$bdd = getBdd();
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +23,14 @@ $bdd = getBdd();
 	<!-- Formulaire de connexion -->
 
 			<div class="login">
-				<form action="./controlers/login.php" method="POST">
+				<form action="../../controlers/login.php" method="POST">
 					<input type="email" name="email" placeholder="email*">
 					<input type="password" name="mdp" placeholder="password*">
 					<input type="submit" name="connexion" placeholder="Connexion" id="connexion">		
 				</form>
 
 				<div class="forget_password">
-					<a href="./views/view/forgot_password.php">Information de compte oublié ?</a>
+					<a href="../../controlers/forgot_password.php">Information de compte oublié ?</a>
 				</div>
 			</div>
 		</div>
@@ -51,7 +48,7 @@ $bdd = getBdd();
 			<div class="inscritpion">
 				<h1>Inscription</h1>
 				<p>C'est gratuit (et ça le restera toujours)</p>
-				<form action="./controlers/registration.php" method="POST">
+				<form action="../../controlers/registration.php" method="POST">
 					<input type="text" name="name" placeholder="prénom*" autocomplete="">
 					<input type="text" name="surname" placeholder="Nom*" autocomplete="">
 					<input type="email" name="email" placeholder="email*" autocomplete="">

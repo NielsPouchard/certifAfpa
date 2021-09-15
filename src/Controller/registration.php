@@ -1,7 +1,8 @@
 <?php  
 session_start();
-require_once('./controlers/bdd.php'); 
-require_once('./controlers/utils.php');
+require_once __DIR__.'/controlers/bdd.php';
+require_once __DIR__.'/controlers/models/User.php';
+require_once __DIR__.'/controlers/models/Picture.php';
 
 // 1- User Registration
 	if (isset($_POST['submit'])) {
@@ -15,7 +16,7 @@ require_once('./controlers/utils.php');
 			$pseudo = htmlspecialchars($_POST['pseudo']);
 			$role = 'userRole';
 
-			$data = checkUsers($idusers);
+			$userModel->checkUsers($idusers);
 			$row = $check->rowCount(); 
 			
 			if ($row === 0) { // Le user existe pas
@@ -25,7 +26,7 @@ require_once('./controlers/utils.php');
 							if ($mdp === $confirmMdp) {
 								$password = password_hash($mdp, PASSWORD_BCRYPT);
 																
-							insertUser(compact('name','surname','email','password','pseudo','role'));	 
+							$userModel->insertUser(compact('name','surname','email','password','pseudo','role'));	 
 									
 								echo "Compte enregistré avec success";
 								header('./index.php');

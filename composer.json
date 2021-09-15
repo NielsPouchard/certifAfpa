@@ -1,5 +1,21 @@
 {
+    "name": "niels/afpa_mvc",
+    "description": "Custom MVC project from scratch",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seymos76",
+            "email": "louisthomas76750@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
     "require": {
         "symfony/http-foundation": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
     }
 }

@@ -62,4 +62,4 @@
 		</div>
 	</div>
 
-	<script src="../view/js/menuBurger.js"></script>
+	<script src="./../js/menuBurger.js"></script>

@@ -20,19 +20,17 @@ $bdd = getBdd();
 <body>
 
 	<!-- Header -->
-		<?php
-		include('./views/commun/header.php');
+		<?php 
+		include __DIR__.'/commun/header.php';
 		?>
 	<!-- Header -->
 
 	<div class="main">
-		 <!-- ----- LEFT PART START (Menu Burger)-----  -->
-			<?php
-			include('./views/commun/menuBurger.php')
+		<!-- ----- LEFT PART START (Menu Burger)-----  -->
+			<?php 
+			include __DIR__.'/commun/menuBurger.php';
 			?>
-		<!-- ----- LEFT PART END -----  -->
-
-
+		<!-- -----   LEFT PART END   -----  -->
 		<!-- ----- MIDDLE PART START -----  -->
 
 				<!-- 	UploadInfoUser -->

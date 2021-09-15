@@ -1,9 +1,4 @@
-<?php 
-session_start();
-require_once('../../controlers/bdd.php');
-require_once('./controlers/utils.php');
-$bdd = getBdd();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +8,29 @@ $bdd = getBdd();
 	<title>forgot Password</title>
 </head>
 <body>
-	<h1>Mot de passe oublié</h1>
-	<form action="" method="POST">
-		<input type="email" name="email" placeholder="Entrez votre email*">
-		<input type="submit" name="submit">
-	</form>
+	<!-- HEADER START -->
+		<?php 
+			include __DIR__.'/commun/header.php';
+		?>
+	<!-- HEADER END -->
+
+	<div class="main">
+		<!-- ----- LEFT PART START (Menu Burger) -----  -->
+		<?php 
+			include __DIR__.'/commun/menuBurger.php';
+		?>
+		<!-- -----   LEFT PART END   -----  -->
+
+		<div class="middleSide">
+			<h1>Mot de passe oublié</h1>
+			<div class="forgotPassword">
+				<form action="" method="POST">
+					<input type="email" name="email" placeholder="Entrez votre email*">
+					<input type="submit" name="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
