@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 
-	if (!$_SESSION['mdp']) {
-		header('Location: index.php');
-	}
+if (!$_SESSION['pseudo']) {
+	header('Location: index.php');
+}
 
-	echo $_SESSION['pseudo'];
+echo $_SESSION['pseudo'];
 ?>

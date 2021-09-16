@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('../../controlers/bdd.php');
 require_once('./controlers/utils.php');
@@ -10,7 +10,7 @@ $bdd = getBdd();
 <head>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +18,15 @@ $bdd = getBdd();
 </head>
 
 <body>
-
-	<!-- Header -->
-		<?php 
-		include __DIR__.'/commun/header.php';
-		?>
-	<!-- Header -->
+<!-- HEADER START -->
+<?php
+include __DIR__."/part/header.php";
+?>
+<!-- HEADER END -->
 
 	<div class="main">
 		<!-- ----- LEFT PART START (Menu Burger)-----  -->
-			<?php 
+			<?php
 			include __DIR__.'/commun/menuBurger.php';
 			?>
 		<!-- -----   LEFT PART END   -----  -->
@@ -37,7 +36,7 @@ $bdd = getBdd();
 		<div class="middleSide">
 			<section class="profileUpdate">
 				<p>Modifier mon profile</p>
-				<form action="./../../controlers/update.php" method="POST" class="sectionUpdate">
+				<form action="/update.php" method="POST" class="sectionUpdate">
 					<input type="text" name="name" value="<?= $_SESSION['nom']; ?>">
 					<input type="text" name="surname" value="<?= $_SESSION['surName']; ?>">
 					<input type="text" name="pseudo" value="<?= $_SESSION['pseudo']; ?>">

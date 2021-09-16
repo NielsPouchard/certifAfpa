@@ -2,37 +2,61 @@
 
 namespace App;
 
-use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
-use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
+use App\Routing\RouteMapping;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
-class Kernel extends BaseKernel
+class Kernel extends AbstractKernel
 {
-    use MicroKernelTrait;
+    use RouteMapping;
 
-    protected function configureContainer(ContainerConfigurator $container): void
+    public function __construct(UrlMatcher $matcher)
     {
-        $container->import('../config/{packages}/*.yaml');
-        $container->import('../config/{packages}/'.$this->environment.'/*.yaml');
-
-        if (is_file(\dirname(__DIR__).'/config/services.yaml')) {
-            $container->import('../config/services.yaml');
-            $container->import('../config/{services}_'.$this->environment.'.yaml');
-        } else {
-            $container->import('../config/{services}.php');
+        $this->matcher = $matcher;
+        $this->routeCollection = require __DIR__."/Routing/Mapping.php";
+    }
+    public function handle(Request $request): Response
+    {
+        try {
+            $routeMatch = $this->matcher->match($request->getPathInfo());
+        } catch (ResourceNotFoundException $exception) {
+            return new Response(
+                'Not Found',
+                Response::HTTP_NOT_FOUND
+            );
+        } catch (\Exception $exception) {
+            return new Response("An error occurred", Response::HTTP_INTERNAL_SERVER_ERROR);
         }
+        var_dump($routeMatch);
+        try {
+            $controllerFilename = $routeMatch['_route']."Controller";
+            include sprintf(__DIR__."/Controller/%s.php", $controllerFilename);
+            var_dump('file found');
+        } catch (\Exception $exception) {
+            throw new \Exception($exception->getMessage());
+        }
+        $this->addRouteMatchToRequest($routeMatch, $request);
+        // get controller function or callback
+        $controller = $this->getController($routeMatch['_route']);
+        var_dump($controller);
+        return get_view($request);
     }
 
-    protected function configureRoutes(RoutingConfigurator $routes): void
+    protected function getController(string $route): string
     {
-        $routes->import('../config/{routes}/'.$this->environment.'/*.yaml');
-        $routes->import('../config/{routes}/*.yaml');
+        return $this->routeCollection->get($route)->getDefaults()['_controller'];
+    }
 
-        if (is_file(\dirname(__DIR__).'/config/routes.yaml')) {
-            $routes->import('../config/routes.yaml');
-        } else {
-            $routes->import('../config/{routes}.php');
-        }
+    private function addRouteMatchToRequest(array $routeMatch, Request $request)
+    {
+        // add route match array result to request attributes
+        $request->attributes->add($routeMatch);
+    }
+
+    private function controllerExists(string $controller)
+    {
+        return is_callable($controller) || function_exists($controller);
     }
 }

@@ -1,45 +1,47 @@
 <?php
 session_start();
 use App\Database\DB;
+use Symfony\Component\HttpFoundation\Request;
 
 $bdd = DB::getDb();
 if (!isset($_POST['connexion'])) {
-//	die('no login active');
 	ob_start();
-	include __DIR__.'/../../views/view/login.php';
+	include __DIR__.'/../View/registerLogin.php';
 }
-// 1-Login
-if (isset($_POST['connexion'])) {
-	$email = htmlspecialchars($_POST['email']);
-	$mdp = htmlspecialchars($_POST['mdp']);
+function get_credentials_from_request(Request $request): ?\App\Model\User
+{
+    if (!empty($_POST['email'])  && !empty($_POST['mdp'])) {
+        $email = htmlspecialchars($_POST['email']);
+        $mdp = htmlspecialchars($_POST['mdp']);
+        return new \App\Model\User($email,$mdp);
+    }
+    return null;
+}
 
-	if (!empty($_POST['email'])  && !empty($_POST['mdp'])) {
+function isEmailValid(string $email)
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
 
-		$check = $bdd->prepare('SELECT * FROM user WHERE email = ?');
-		$check->execute(array($email));
-		$row = $check->rowCount(); // On va rechercher avec rowCount si le user existe dans la table
+function login_controller(Request $request)
+{
+    if ($request->isMethod('POST')) {
+        $userCredentials = get_credentials_from_request($request);
+        $userRepository = new \App\Repository\UserRepository();
+        $data = $userRepository->checkIfUserExists($userCredentials->getEmail());
+        if ($data) {
+            $password = password_verify($userCredentials->getPassword(), $data['mdp']);
 
-		if ($row == 1) { // Le user existe
-			$data = $check->fetch(); // On stock les données dans $data
+            if ($password) {
+                $userSession = new \App\Model\UserSession($data);
+                $_SESSION['user'] = $userSession;
 
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$password = password_verify($mdp, $data['mdp']);
+                if ($data['role'] === 'userAdmin') {
+                    header("Location: admin.php?id=".$_SESSION['iduser']);
 
-				if ($password) {
-					$_SESSION['iduser'] = $data['iduser'];
-					$_SESSION['nom'] = $data['nom'];
-					$_SESSION['surName'] = $data['surName'];
-					$_SESSION['email'] = $data['email'];
-					$_SESSION['pseudo'] = $data['pseudo'];
-					$_SESSION['photo'] = $data['photo'];
-
-					var_dump();
-					if ($data['role'] === 'userAdmin') {
-						header("Location: admin.php?id=".$_SESSION['iduser']);
-
-					}else header("Location: user.php?id=".$_SESSION['iduser']);
-				}
-			}else header('Location: index.php');
-		}else header('Location: index.php');
-	}else header('Location: index.php');
+                }else header("Location: user.php?id=".$_SESSION['iduser']);
+            }
+        }
+    }
+    render_template('login', $request);
 }

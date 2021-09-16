@@ -1,25 +1,27 @@
-<?php 
+<?php
 session_start();
-include('../../controlers/bdd.php');
+use App\Database\DB;
 
-	if (isset($_POST['email'])) {
+$bdd = DB::getDb();
 
-		$password = uniqid(); //Génère un identifiant unique
-		$hasedPassword = password_hash($password, PASSWORD_DEFAULT);
+if (isset($_POST['email'])) {
 
-		$message = "Bonjour, voici votre nouveau Mot de Passe: $password";// Envoie du mdp en clair, pas hash
-		$headers = 'Content-Type: text/plain; charset="utf-8"'." ";// permet de gérer les caractères spéciaux
+    $password = uniqid(); //Génère un identifiant unique -> ??? comment tu peux connaitre le mot de passe si tu le génères ?
+    $hasedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-		if(mail($_POST['email'] && !empty($_POST['email']), 'Mot de passe oiblié', $message, $headers)){
+    $message = "Bonjour, voici votre nouveau Mot de Passe: $password";// Envoie du mdp en clair, pas hash: DO NOT DO THAT, NEVER
+    $headers = 'Content-Type: text/plain; charset="utf-8"'." ";// permet de gérer les caractères spéciaux
 
-			$sql = "UPDATE user SET password = ? WHERE email = ?";
-			$stmt = $bdd->prepare($sql);
-			$stmt->execute([$hasedPassword, $_POST('email')]);
+    if(mail($_POST['email'] && !empty($_POST['email']), 'Mot de passe oiblié', $message, $headers)){
 
-			echo "Email envoyé";
-			
-		}else {
-			echo "Une erreur est survenue";
-		}
-	}
+        $sql = "UPDATE user SET password = ? WHERE email = ?";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute([$hasedPassword, $_POST('email')]);
+
+        echo "Email envoyé";
+
+    }else {
+        echo "Une erreur est survenue";
+    }
+}
 ?>

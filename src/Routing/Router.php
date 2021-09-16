@@ -1,13 +1,12 @@
 <?php
 namespace App\Routing;
 
-use App\Controller\HelloController;
 use App\Routing\AbstractRouter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Routing\RouteMapping;
 
-class Router
+class Router extends AbstractRouter
 {
     use RouteMapping;
 

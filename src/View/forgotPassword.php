@@ -5,18 +5,19 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
 	<title>forgot Password</title>
 </head>
 <body>
-	<!-- HEADER START -->
-		<?php 
-			include __DIR__.'/commun/header.php';
-		?>
-	<!-- HEADER END -->
+<!-- HEADER START -->
+<?php
+include __DIR__."/part/header.php";
+?>
+<!-- HEADER END -->
 
 	<div class="main">
 		<!-- ----- LEFT PART START (Menu Burger) -----  -->
-		<?php 
+		<?php
 			include __DIR__.'/commun/menuBurger.php';
 		?>
 		<!-- -----   LEFT PART END   -----  -->
