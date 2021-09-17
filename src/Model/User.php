@@ -35,26 +35,23 @@ class User
 		$bdd = DB::getDb();
 		$check = $bdd->prepare("SELECT * FROM user WHERE email = ?");
 		$check->execute(array($email));
-		$data = $check->fetch();
-
-		return $data;
+		return $check->fetchObject();
 	}
 
-	public function insertUser(array $variables=[])
+	public function insertUser(array $variables)
 	{
         $bdd = DB::getDb();
-		extract($variables);
+        var_dump($variables);
 		$insert = $bdd->prepare("INSERT INTO user(nom, surName, email, mdp, pseudo, role) VALUES (:nom, :surName, :email, :mdp, :pseudo, :role)");
-		$insert->execute(compact('name','surname','email','password','pseudo','role'));
+		$insert->execute('name','surname','email','password','pseudo','role');
 	}
 
 
 	public function updateUser(array $variables=[])
 	{
         $bdd = DB::getDb();
-		extract($variables);
 		$updateDataUser = $bdd->prepare("UPDATE user SET nom = :name, surName = :surname, email = :email, pseudo = :pseudo WHERE iduser = :iduser");
-		$user = $updateDataUser->execute(compact('name', 'surname', 'email', 'pseudo', 'iduser'));
+		$user = $updateDataUser->execute('name', 'surname', 'email', 'pseudo', 'iduser');
 	}
 
     public function saveUser(array $data)

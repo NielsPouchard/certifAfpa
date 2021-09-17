@@ -1,4 +1,4 @@
-
+<?php $user = $_SESSION['user']; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +31,8 @@ include __DIR__."/part/header.php";
 							</div>
 						</div>
 						<div class="user_input">
-							<form action="../../controlers/handler.php?task=write" method="POST" id="chat">
-								<input type="text" name="pseudo" id="pseudo" value=<?= $_SESSION['pseudo']; ?> >
+							<form action="/messenger?task=write" method="POST" id="chat">
+								<input type="text" name="pseudo" id="pseudo" value=<?= $user->pseudo ?> >
 								<input type="text" name="content" id="content" placeholder="Votre message">
 								<button type="submit" name="go" value="write" class="go">Send</button>
 							</form>

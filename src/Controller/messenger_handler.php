@@ -29,30 +29,29 @@ function getMessages()
 }
 
 // 1- Créer une function pour envoyer les messages en POST
-function postMessage(){
-    global $bdd;
+function postMessage(Request $request)
+{
+    $bdd = DB::getDb();
 
 // 2- Traiter les paramètres passés en POST	(pseudo + content)
-    if(!array_key_exists('pseudo', $_POST) || !array_key_exists('content', $_POST)) {
-        return json_encode(["status" => "error", "message" => "Message non envoye"]);
+    if(!array_key_exists('pseudo', $request->request->all()) || !array_key_exists('content', $request->request->all())) {
+        return new JsonResponse(["status" => "error", "message" => "Message non envoye"], Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    $pseudo = htmlspecialchars($_POST['pseudo']);
-    $content = htmlspecialchars($_POST['content']);
-
-
+    $pseudo = htmlspecialchars($request->request->get('pseudo'));
+    $content = htmlspecialchars($request->request->get('content'));
 // 3-Créer une requête pour insérer dans la bdd
     $query = $bdd->prepare("INSERT INTO chat(created_at, pseudo, content, user_iduser) VALUES (:created_at, :pseudo, :content, :user_iduser)");
     $date = new \DateTime();
 
-    $created_at = (array)$date;
     $query->execute([
         "pseudo" => $pseudo,
         "content" => $content,
         "created_at" => $date->format('Y-m-d H:i:s'),
-        "user_iduser" => $_SESSION['iduser']
+        "user_iduser" => $_SESSION['user']->id
     ]);
 
 // 4-Donner un statut du succes ou d'erreur au format JSON
-    return json_encode(["status" => "success"]);
+    return new JsonResponse([$query->fetchObject()], Response::HTTP_OK);
+//        return json_encode(["status" => "success"]);
 }

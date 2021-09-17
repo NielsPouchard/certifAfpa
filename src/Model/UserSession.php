@@ -8,21 +8,34 @@ class UserSession
 
     public string $email;
 
-    public string $name;
+    public ?string $name;
 
-    public string $surname;
+    public ?string $surname;
 
-    public string $pseudo;
+    public ?string $pseudo;
 
-    public string $photo;
+    public ?string $photo;
 
-    public function __construct(array $data)
+    public string $role;
+
+    public function __construct($data)
     {
-        $this->email = $data['email'];
-        $this->id = $data['iduser'];
-        $this->name = $data['nom'];
-        $this->surname = $data['surName'];
-        $this->pseudo =  $data['pseudo'];
-        $this->photo = $data['photo'];
+        if (is_array($data)) {
+            $this->email = $data['email'];
+            $this->id = $data['iduser'];
+            $this->name = $data['nom'];
+            $this->surname = $data['surName'];
+            $this->pseudo =  $data['pseudo'];
+            $this->photo = $data['photo'] ?? null;
+            $this->role = $data['role'] ?? 'userRole';
+        } else {
+            $this->email = $data->email;
+            $this->id = $data->iduser;
+            $this->name = $data->nom;
+            $this->surname = $data->surName;
+            $this->pseudo =  $data->pseudo;
+            $this->photo = $data->photo ?? null;
+            $this->role = $data->role ?? 'userRole';
+        }
     }
 }

@@ -18,7 +18,7 @@ include __DIR__."/part/header.php";
 <div class="main">
     <!-- ----- LEFT PART START (Menu Burger) -----  -->
     <?php
-    include './commun/menuBurger.php';
+    include __DIR__."/commun/menuBurger.php";
     ?>
     <!-- -----   LEFT PART END   -----  -->
     <!-- ----- MIDDLE PART START -----  -->
@@ -28,7 +28,7 @@ include __DIR__."/part/header.php";
             <div class="postHeader">
                 <div class="postMain">
                     <form action="" method="POST">
-                        <img src="<?= $_SESSION['photo']; ?>" alt="" style="width: 10%;">
+                        <img src="<?= $_SESSION['user']->photo ?>" alt="" style="width: 10%;">
                         <input type="submit" name="submitPost" class="send" value="Send">
                         <input type="text" name="postContent" class="post" placeholder="What's on your mind, <?= $_SESSION['pseudo']; ?> ?">
                     </form>

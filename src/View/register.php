@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Inscription</title>
 </head>
 <body>
 <!-- HEADER START -->
@@ -39,4 +39,5 @@ include __DIR__."/part/header.php";
     </div>
 </div>
 
-<?php include __DIR__."/part/footer.php"; ?>
+</body>
+</html>

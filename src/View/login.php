@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Connexion</title>
 </head>
 <body>
 <!-- HEADER START -->
@@ -26,7 +26,7 @@ include __DIR__."/part/header.php";
         <div class="inscritpion">
             <h1>Inscription</h1>
             <p>C'est gratuit (et ça le restera toujours)</p>
-            <form action="/registerLogin" method="POST">
+            <form action="/register" method="POST">
                 <input type="text" name="name" placeholder="prénom*" autocomplete="">
                 <input type="text" name="surname" placeholder="Nom*" autocomplete="">
                 <input type="email" name="email" placeholder="email*" autocomplete="">

@@ -1,11 +1,13 @@
 <header>
-    <div class="<?php if (null !== $_SESSION['pseudo']) : ?>navigation<?php else: ?>connection<?php endif; ?>">
+    <?php $user = $_SESSION['user']; ?>
+    <?php var_dump($user); ?>
+    <div class="<?php if (null !== $user->pseudo) : ?>navigation<?php else: ?>connection<?php endif; ?>">
         <div class="logo_fk">
             <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" alt="">
             <span>Fakebook</span>
         </div>
 
-        <?php if (null !== $_SESSION['pseudo']) : ?>
+        <?php if (null !== $user->pseudo) : ?>
 
             <div class="bar_search">
                 <form action="/search-bar" method="GET">
@@ -24,15 +26,15 @@
                 <?php endif; ?>
             </div>
             <div class="pseudoUser">
-                <?= $_SESSION['pseudo']; ?>
-                <img src="<?= $_SESSION['photo']; ?>" alt="">
+                <?= $user->pseudo ?>
+                <img src="<?= $user->photo ?>" alt="">
             </div>
             <a href="/logout"><button class="logout">Déconnexion</button></a>
 
         <?php else : ?>
 
             <div class="login">
-                <form action="/registerLogin" method="POST">
+                <form action="/login" method="POST">
                     <input type="email" name="email" placeholder="email*">
                     <input type="password" name="mdp" placeholder="password*">
                     <input type="submit" name="connexion" placeholder="Connexion" id="connexion">

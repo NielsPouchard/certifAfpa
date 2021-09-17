@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\HttpKernel;
 
 class Kernel extends AbstractKernel
 {
@@ -29,19 +30,16 @@ class Kernel extends AbstractKernel
         } catch (\Exception $exception) {
             return new Response("An error occurred", Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-        var_dump($routeMatch);
-        try {
-            $controllerFilename = $routeMatch['_route']."Controller";
-            include sprintf(__DIR__."/Controller/%s.php", $controllerFilename);
-            var_dump('file found');
-        } catch (\Exception $exception) {
-            throw new \Exception($exception->getMessage());
-        }
         $this->addRouteMatchToRequest($routeMatch, $request);
-        // get controller function or callback
-        $controller = $this->getController($routeMatch['_route']);
-        var_dump($controller);
-        return get_view($request);
+
+        $controllerResolver = new HttpKernel\Controller\ControllerResolver();
+        $argumentResolver = new HttpKernel\Controller\ArgumentResolver();
+
+        $controller = $controllerResolver->getController($request);
+        $arguments = $argumentResolver->getArguments($request, $controller);
+        $response = call_user_func_array($controller, $arguments);
+        $response->headers->set('Content-Type','text/html');
+        return $response;
     }
 
     protected function getController(string $route): string
@@ -49,14 +47,9 @@ class Kernel extends AbstractKernel
         return $this->routeCollection->get($route)->getDefaults()['_controller'];
     }
 
-    private function addRouteMatchToRequest(array $routeMatch, Request $request)
+    private function addRouteMatchToRequest(array $routeMatch, Request $request): void
     {
         // add route match array result to request attributes
         $request->attributes->add($routeMatch);
-    }
-
-    private function controllerExists(string $controller)
-    {
-        return is_callable($controller) || function_exists($controller);
     }
 }

@@ -21,7 +21,7 @@ $map = [
 
 foreach ($map as $key => $value) {
     $routes->add($value, new Route($key, [
-        '_controller' => $value."_controller"
+        '_controller' => "App\\Controller\\".ucfirst($value)."_Controller::index"
     ]));
 }
 
