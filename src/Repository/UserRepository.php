@@ -3,7 +3,6 @@ namespace App\Repository;
 
 use App\Database\DB;
 use App\Model\RegistrationUser;
-use App\Model\User;
 
 class UserRepository extends AbstractRepository
 {

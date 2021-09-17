@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-use App\Model\User;
 use App\Model\UserProfile;
 use App\Repository\UserRepository;
 use App\Utils\RequestFormValidator;
@@ -12,10 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 class UpdateProfileUser_Controller
 {
     use RequestFormValidator;
+
     public function index(Request $request)
     {
         if ($request->isMethod('POST')) {
-            if (isset($_POST['update'])){
+            if (isset($_POST['update'])) {
                 if ($this->isUserProfileFormValid($request)) {
                     $userProfile = new UserProfile($request);
                     $iduser = $_SESSION['user']->id;
@@ -33,7 +33,7 @@ class UpdateProfileUser_Controller
                     $userRepository->updateUser(compact('name', 'surname', 'email', 'pseudo', 'iduser'));
                     $_SESSION['user'] = $userProfile;
 
-                    return new RedirectResponse('/updateProfileUser', Response::HTTP_TEMPORARY_REDIRECT);
+                    return new RedirectResponse('/updateProfileUser');
                 }
             }
         }

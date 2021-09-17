@@ -22,8 +22,8 @@
 
 
 		<div class="pseudoUser">
-			<?= $_SESSION['pseudo']; ?>
-			<img src="<?= $_SESSION['photo']; ?>" alt="">
+			<?= $_SESSION['user']->pseudo ?>
+			<img src="<?= $_SESSION['user']->photo ?>" alt="">
 		</div>
 
 		<a href="/logout"><button class="logout">Déconnexion</button></a>

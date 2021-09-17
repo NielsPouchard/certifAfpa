@@ -24,4 +24,3 @@ if (isset($_POST['email'])) {
         echo "Une erreur est survenue";
     }
 }
-?>

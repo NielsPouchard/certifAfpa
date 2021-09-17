@@ -5,6 +5,9 @@ class DB
 {
 	private static ?\PDO $_instance = null;
 
+    private function __construct()
+    {}
+
 	public static function getDb(): \PDO
 	{
 		if (null === self::$_instance) {

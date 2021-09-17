@@ -1,13 +1,12 @@
 <header>
     <?php $user = $_SESSION['user']; ?>
-    <?php var_dump($user); ?>
-    <div class="<?php if (null !== $user->pseudo) : ?>navigation<?php else: ?>connection<?php endif; ?>">
+    <div class="<?php if (null !== $user['pseudo']) : ?>navigation<?php else: ?>connection<?php endif; ?>">
         <div class="logo_fk">
-            <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" alt="">
+<!--            <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" height="50" alt="">-->
             <span>Fakebook</span>
         </div>
 
-        <?php if (null !== $user->pseudo) : ?>
+        <?php if (isset($_SESSION['user'])) : ?>
 
             <div class="bar_search">
                 <form action="/search-bar" method="GET">
@@ -26,8 +25,8 @@
                 <?php endif; ?>
             </div>
             <div class="pseudoUser">
-                <?= $user->pseudo ?>
-                <img src="<?= $user->photo ?>" alt="">
+                <?= $user['pseudo'] ?>
+                <img src="<?= $user['photo'] ?>" alt="">
             </div>
             <a href="/logout"><button class="logout">Déconnexion</button></a>
 

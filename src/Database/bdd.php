@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Database;
 /*
  * You can watch App\Database\DB class file to understand how we gonna load the db
  * in the future
