@@ -44,6 +44,6 @@ class Register_Controller
             $registration = $userRepository->register($userRegistration);
             return new RedirectResponse('/login');
         }
-        return render_template($request);
+        return render_twig($request, 'home');
     }
 }

@@ -13,7 +13,7 @@
 			</div>
 			<ul class="nav_links">
 				<li>
-					<a href="/updateProfileUser">
+					<a href="/update-profile-user">
 						<i class="fas fa-user-edit"></i>
 						<span class="link_name">Modifier Profile</span>
 					</a>

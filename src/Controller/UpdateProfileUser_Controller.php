@@ -12,8 +12,11 @@ class UpdateProfileUser_Controller
 {
     use RequestFormValidator;
 
-    public function index(Request $request)
+    public function updateUserProfile(Request $request)
     {
+        if (!isset($_SESSION['user']) || null === $_SESSION['user']) {
+            return new RedirectResponse('/login');
+        }
         if ($request->isMethod('POST')) {
             if (isset($_POST['update'])) {
                 if ($this->isUserProfileFormValid($request)) {
@@ -37,6 +40,6 @@ class UpdateProfileUser_Controller
                 }
             }
         }
-        return render_template($request);
+        return render_twig($request, 'update_profile_user', ['user' => $_SESSION['user']]);
     }
 }

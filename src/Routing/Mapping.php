@@ -7,47 +7,51 @@ $routes = new RouteCollection();
 
 $map = [
     '/' => [
+        // name of route
         '_name' => 'home',
+        // controller class name
         '_controller' => 'Home_Controller',
-    ],
-    '/routing' => [
-        '_name' => 'routing',
-        '_controller' => 'RouteCollection',
-        '_method' => 'createRoute',
-        '_http_verb' => 'POST'
-    ],
-    '/routes' => [
-        '_name' => 'routes',
-        '_controller' => 'RouteCollection',
+        // method/function name
+        '_action' => 'home',
+        // HTTP method(GET|POST|PUT|PATCH|DELETE|OPTIONS)
+        '_method' => 'GET'
     ],
     '/login' => [
         '_name' => 'login',
         '_controller' => 'Login_Controller',
+        '_action' => 'login',
+        '_method' => 'POST'
     ],
     '/logout' => [
         '_name' => 'logout',
         '_controller' => 'Logout_Controller',
-        '_method' => 'logout'
+        '_action' => 'logout',
+        '_method' => 'GET',
     ],
     '/register' => [
         '_name' => 'register',
         '_controller' => 'Register_Controller',
-        '_method' => 'register'
+        '_action' => 'register',
+        '_method' => 'POST',
     ],
     '/user' => [
         '_name' => 'user',
         '_controller' => 'User_Controller',
+        '_action' => 'user',
+        '_method' => 'GET'
     ],
     '/messenger' => [
         '_name' => 'messenger',
         '_controller' => 'Messenger_Controller',
-        '_method' => 'messenger'
+        '_action' => 'messenger',
+        '_method' => 'GET',
     ],
-    '/updateProfileUser' => [
-        '_name' => 'updateProfileUser',
+    '/update-profile-user' => [
+        '_name' => 'update-profile-user',
         '_controller' => 'UpdateProfileUser_Controller',
+        '_action' => 'updateUserProfile',
+        '_method' => 'POST'
     ]
-//    '/updateProfileUser'    => 'updateProfileUser',
 //    '/forgotPassword'       => 'forgotPassword',
 //    '/actuality'            => 'actuality',
 //    '/admin'                => 'admin',
@@ -56,11 +60,11 @@ $map = [
 ];
 
 foreach ($map as $key => $value) {
-    $methodName = $value['_method'] ?? 'index';
+    $methodName = $value['_action'] ?? 'index';
     $routes->add($key, new Route(
         $key,
         ['_controller' => "App\\Controller\\{$value['_controller']}::{$methodName}"],
-        ['_name' => $value['_name']]
+        ['_method' => $value['_method']]
     ));
 }
 
