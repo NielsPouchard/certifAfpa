@@ -10,12 +10,11 @@ use App\Model\UserSession;
 
 class Login_Controller
 {
-    public function index(Request $request): Response
+    public function login(Request $request): Response
     {
-//        if (isset($_SESSION['user'])) {
-//            $userSession = $_SESSION['user'];
-//            return new RedirectResponse('/user?id='.$_SESSION['user']);
-//        }
+        if (isset($_SESSION['user'])) {
+            return new RedirectResponse('/user');
+        }
         if ($request->isMethod('POST')) {
             $userCredentials = $this->get_credentials_from_request($request);
             var_dump($userCredentials);
@@ -41,14 +40,14 @@ class Login_Controller
             $_SESSION['user']['photo'] = $userSession->photo;
             $_SESSION['user']['role'] = $userSession->role;
 
-            if ($_SESSION['user']->role === 'userAdmin') {
-                return new RedirectResponse('/admin?id='.$_SESSION['user']['id']);
+            if ($_SESSION['user']['role'] === 'userAdmin') {
+                return new RedirectResponse('/admin');
 
             }
-            return new RedirectResponse('/user?id='.$_SESSION['user']['id']);
+            return new RedirectResponse('/user');
 
         }
-        return render_template($request);
+        return render_twig($request, 'home');
     }
 
     private function get_credentials_from_request(Request $request): ?UserCredentials

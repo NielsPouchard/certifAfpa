@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="main">
+        <!-- ----- LEFT PART START (Menu Burger)-----  -->
+        {{ include('part/menuBurger.twig') }}
+
+        <!-- 	UploadInfoUser -->
+        <div class="middleSide">
+            <section class="profileUpdate">
+                <p>Modifier mon profile</p>
+                <form action="/updateProfileUser" method="POST" class="sectionUpdate">
+                    <input type="text" name="name" value="{{ user.nom }}">
+                    <input type="text" name="surname" value="{{ user.surname }}">
+                    <input type="text" name="pseudo" value="{{ user.pseudo }}">
+                    <input type="email" name="email" value="{{ user.email }}">
+                    <input type="submit" name="update" value="Modifier">
+                </form>
+
+                <!-- 	UploadPrdofilePictureUser -->
+                <p>Modifier ma photo de profile</p>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="photo" id="photo">
+                    <input type="submit" name="upload" value="Upload">
+                </form>
+            </section>
+        </div>
+        <!-- ----- MIDDLE PART END -----  -->
+    </div>
+{% endblock %}

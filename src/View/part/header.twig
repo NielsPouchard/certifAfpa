@@ -1,12 +1,11 @@
 <header>
-    <?php $user = $_SESSION['user']; ?>
-    <div class="<?php if (null !== $user['pseudo']) : ?>navigation<?php else: ?>connection<?php endif; ?>">
+    <div class="{% if null != user.pseudo %}navigation{% else %}connection{% endif %}">
         <div class="logo_fk">
-<!--            <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" height="50" alt="">-->
-            <span>Fakebook</span>
+            <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" height="50" alt="">
+            <span>{{ name }}</span>
         </div>
 
-        <?php if (isset($_SESSION['user'])) : ?>
+        {% if user is defined %}
 
             <div class="bar_search">
                 <form action="/search-bar" method="GET">
@@ -14,23 +13,24 @@
                     <input type="submit" placeholder="Chercher" class="search" value="search">
                 </form>
 
-                <?php if (isset($searchBar)): ?>
+                {% if searchBar is defined %}
                     <div class="searchResults">
                         <ul>
-                            <?php while($results = $searchBar->fetch()){ ?>
-                                <li> <?= $results['surName']?> <?= $results['nom']?> <?= $results['pseudo']?></li>
-                            <?php } ?>
+                            {% for result in results %}
+                            <li> {{ user.surname }} {{ user.name }} {{ user.pseudo }}
+                                {% endfor %} 
                         </ul>
                     </div>
-                <?php endif; ?>
+                {% endif %}
+
             </div>
             <div class="pseudoUser">
-                <?= $user['pseudo'] ?>
-                <img src="<?= $user['photo'] ?>" alt="">
+                {{ user.pseudo }}
+                <img src="{{ user.photo }}" alt="">
             </div>
             <a href="/logout"><button class="logout">Déconnexion</button></a>
 
-        <?php else : ?>
+        {% else %}
 
             <div class="login">
                 <form action="/login" method="POST">
@@ -44,6 +44,6 @@
                 </div>
             </div>
 
-        <?php endif; ?>
+        {% endif %}
     </div>
 </header>

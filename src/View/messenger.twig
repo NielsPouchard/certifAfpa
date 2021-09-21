@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    {{ include('part/menuBurger.twig') }}
+    <div class="rightSide">
+        <section class="chat">
+            <div class="messages">
+                <div class="message">
+                    <span class="date"></span>
+                    <span class="pseudo"></span>
+                    <span class="content"></span>
+                </div>
+            </div>
+            <div class="user_input">
+                <form action="/messenger?task=write" method="POST" id="chat">
+                    <input type="text" name="pseudo" id="pseudo" value="{{ user.pseudo }}" >
+                    <input type="text" name="content" id="content" placeholder="Votre message">
+                    <button type="submit" name="go" value="write" class="go">Send</button>
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

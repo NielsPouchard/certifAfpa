@@ -1,0 +1,71 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="main">
+        {{ include('part/menuBurger.twig') }}
+        {% set user = app.session.get('user') %}
+        <div class="middleSide">
+            <!-- 	Post -->
+            <section>
+                <div class="postHeader">
+                    <div class="postMain">
+                        <form action="" method="POST">
+                            <img src="<?= $_SESSION['user']->photo ?>" alt="" style="width: 10%;">
+                            <input type="submit" name="submitPost" class="send" value="Send">
+                            <input type="text" name="postContent" class="post" placeholder="What's on your mind, {{ user.pseudo }} ?">
+                        </form>
+                    </div>
+                    <p>File d'actualités</p>
+                    <!-- 	ContentPost -->
+                    <section>
+                        <div class="actuality">
+                            <div class="posted">
+                                <div class="post">
+                                    <span class="date"></span>
+                                    <span class="pseudo"></span>
+                                    <span class="content"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 	ContentPictures -->
+                    <section>
+                        <div class="actuality">
+                            <div class="postedPictures">
+                                <div class="postpicture">
+                                    <span class="date"></span>
+                                    <span class="pseudo"></span>
+                                    <span class="content"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 	ContentMovies -->
+                    <section>
+                        <div class="actuality">
+                            <div class="postedMovies">
+                                <div class="postMovie">
+                                    <span class="date"></span>
+                                    <span class="pseudo"></span>
+                                    <span class="content"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 	ContentComments -->
+                    <section>
+                        <div class="actuality">
+                            <div class="postedComments">
+                                <div class="postComment">
+                                    <span class="date"></span>
+                                    <span class="pseudo"></span>
+                                    <span class="content"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

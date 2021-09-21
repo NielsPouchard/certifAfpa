@@ -6,8 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Home_Controller
 {
-    public function index(Request $request): Response
+    public function home(Request $request): Response
     {
-        return render_template($request);
+        return render_twig($request, 'home', ['name' => "FACEVOOK"]);
     }
 }

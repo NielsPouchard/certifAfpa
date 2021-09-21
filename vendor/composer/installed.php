@@ -5,7 +5,11 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
+<<<<<<< HEAD
         'reference' => 'ac668a19c170e08cbd5c03ca00441c2497ff713c',
+=======
+        'reference' => '9754db66bef47ea31f0254c79eed236e51351fc3',
+>>>>>>> templating
         'name' => 'niels/afpa_mvc',
         'dev' => true,
     ),
@@ -37,7 +41,11 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+<<<<<<< HEAD
             'reference' => 'ac668a19c170e08cbd5c03ca00441c2497ff713c',
+=======
+            'reference' => '9754db66bef47ea31f0254c79eed236e51351fc3',
+>>>>>>> templating
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
@@ -86,12 +94,21 @@
             'dev_requirement' => true,
         ),
         'phpdocumentor/type-resolver' => array(
+<<<<<<< HEAD
             'pretty_version' => '1.4.0',
             'version' => '1.4.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
             'aliases' => array(),
             'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+=======
+            'pretty_version' => '1.5.0',
+            'version' => '1.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
+            'aliases' => array(),
+            'reference' => '30f38bffc6f24293dadd1823936372dfa9e86e2f',
+>>>>>>> templating
             'dev_requirement' => true,
         ),
         'phpspec/prophecy' => array(
@@ -104,12 +121,21 @@
             'dev_requirement' => true,
         ),
         'phpunit/php-code-coverage' => array(
+<<<<<<< HEAD
             'pretty_version' => '9.2.6',
             'version' => '9.2.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
             'aliases' => array(),
             'reference' => 'f6293e1b30a2354e8428e004689671b83871edde',
+=======
+            'pretty_version' => '9.2.7',
+            'version' => '9.2.7.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpunit/php-code-coverage',
+            'aliases' => array(),
+            'reference' => 'd4c798ed8d51506800b441f7a13ecb0f76f12218',
+>>>>>>> templating
             'dev_requirement' => true,
         ),
         'phpunit/php-file-iterator' => array(
@@ -472,6 +498,18 @@
             'reference' => '34a41e998c2183e22995f158c581e7b5e755ab9e',
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
+=======
+        'twig/twig' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twig/twig',
+            'aliases' => array(),
+            'reference' => '9b58bb8ac7a41d72fbb5a7dc643e07923e5ccc26',
+            'dev_requirement' => false,
+        ),
+>>>>>>> templating
         'webmozart/assert' => array(
             'pretty_version' => '1.10.0',
             'version' => '1.10.0.0',
