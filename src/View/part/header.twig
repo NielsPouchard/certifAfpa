@@ -2,7 +2,7 @@
     <div class="{% if null != user.pseudo %}navigation{% else %}connection{% endif %}">
         <div class="logo_fk">
             <img src="https://www.cpas.grez-doiceau.be/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" height="50" alt="">
-            <span>Fakebook</span>
+            <span>{{ name }}</span>
         </div>
 
         {% if user is defined %}
@@ -18,7 +18,7 @@
                         <ul>
                             {% for result in results %}
                             <li> {{ user.surname }} {{ user.name }} {{ user.pseudo }}
-                                {% endfor %}
+                                {% endfor %} 
                         </ul>
                     </div>
                 {% endif %}
