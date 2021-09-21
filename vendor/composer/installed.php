@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9d0b81accc2935fbf6759d6687772b3dadcd349b',
+        'reference' => '9754db66bef47ea31f0254c79eed236e51351fc3',
         'name' => 'niels/afpa_mvc',
         'dev' => true,
     ),
@@ -37,7 +37,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9d0b81accc2935fbf6759d6687772b3dadcd349b',
+            'reference' => '9754db66bef47ea31f0254c79eed236e51351fc3',
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(

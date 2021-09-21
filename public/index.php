@@ -46,7 +46,7 @@ $kernel = new Kernel($matcher);
 try {
     $response = $kernel->handle($request);
 } catch (\Exception $exception) {
-    var_dump($exception); 
+   /*  var_dump($exception); */
     throw new Exception($exception->getMessage());
 }
 
