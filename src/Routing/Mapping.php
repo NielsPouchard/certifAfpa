@@ -34,7 +34,7 @@ $map = [
     ],
     '/user' => [
         '_name' => 'user',
-        '_controller' => 'User_Controller',g
+        '_controller' => 'User_Controller',
     ],
     '/messenger' => [
         '_name' => 'messenger',
@@ -45,7 +45,6 @@ $map = [
     '/update-profile-user' => [
         '_name' => 'update-profile-user',
         '_controller' => 'UpdateProfileUser_Controller',
-<<<<<<< HEAD
         '_method' => 'UpdateProfileUser',
     ],
     '/upload' => [
@@ -76,8 +75,6 @@ $map = [
         '_controller' => 'forgotPassword_Controller',
         '_method' => 'forgotPassword'
     ],
-=======
->>>>>>> templating
 ];
 
 foreach ($map as $key => $value) {
