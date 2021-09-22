@@ -426,6 +426,19 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
+<<<<<<< HEAD
+            "version": "1.4.0",
+            "version_normalized": "1.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
+                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
+=======
             "version": "1.5.0",
             "version_normalized": "1.5.0.0",
             "source": {
@@ -437,6 +450,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/30f38bffc6f24293dadd1823936372dfa9e86e2f",
                 "reference": "30f38bffc6f24293dadd1823936372dfa9e86e2f",
+>>>>>>> templating
                 "shasum": ""
             },
             "require": {
@@ -444,10 +458,16 @@
                 "phpdocumentor/reflection-common": "^2.0"
             },
             "require-dev": {
+<<<<<<< HEAD
+                "ext-tokenizer": "*"
+            },
+            "time": "2020-09-17T18:55:26+00:00",
+=======
                 "ext-tokenizer": "*",
                 "psalm/phar": "^4.8"
             },
             "time": "2021-09-17T15:28:14+00:00",
+>>>>>>> templating
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -473,7 +493,11 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
+<<<<<<< HEAD
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.4.0"
+=======
                 "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.5.0"
+>>>>>>> templating
             },
             "install-path": "../phpdocumentor/type-resolver"
         },
@@ -549,6 +573,19 @@
         },
         {
             "name": "phpunit/php-code-coverage",
+<<<<<<< HEAD
+            "version": "9.2.6",
+            "version_normalized": "9.2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "f6293e1b30a2354e8428e004689671b83871edde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f6293e1b30a2354e8428e004689671b83871edde",
+                "reference": "f6293e1b30a2354e8428e004689671b83871edde",
+=======
             "version": "9.2.7",
             "version_normalized": "9.2.7.0",
             "source": {
@@ -560,13 +597,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d4c798ed8d51506800b441f7a13ecb0f76f12218",
                 "reference": "d4c798ed8d51506800b441f7a13ecb0f76f12218",
+>>>>>>> templating
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
+<<<<<<< HEAD
+                "nikic/php-parser": "^4.10.2",
+=======
                 "nikic/php-parser": "^4.12.0",
+>>>>>>> templating
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -584,7 +626,11 @@
                 "ext-pcov": "*",
                 "ext-xdebug": "*"
             },
+<<<<<<< HEAD
+            "time": "2021-03-28T07:26:59+00:00",
+=======
             "time": "2021-09-17T05:39:03+00:00",
+>>>>>>> templating
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -617,7 +663,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
+<<<<<<< HEAD
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.6"
+=======
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.7"
+>>>>>>> templating
             },
             "funding": [
                 {
@@ -1987,6 +2037,10 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
+            "abandoned": true,
+=======
+>>>>>>> templating
             "install-path": "../sebastian/resource-operations"
         },
         {
@@ -2937,6 +2991,13 @@
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
                 "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
+<<<<<<< HEAD
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+=======
             },
             "dist": {
                 "type": "zip",
@@ -3024,12 +3085,17 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
                 "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+>>>>>>> templating
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
             },
+<<<<<<< HEAD
+            "time": "2021-02-19T12:13:01+00:00",
+=======
             "time": "2021-07-28T13:41:28+00:00",
+>>>>>>> templating
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3043,7 +3109,11 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
+                    "Symfony\\Polyfill\\Php73\\": ""
+=======
                     "Symfony\\Polyfill\\Php80\\": ""
+>>>>>>> templating
                 },
                 "files": [
                     "bootstrap.php"
@@ -3070,7 +3140,11 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
+<<<<<<< HEAD
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+=======
             "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+>>>>>>> templating
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
@@ -3079,7 +3153,11 @@
                 "shim"
             ],
             "support": {
+<<<<<<< HEAD
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
+=======
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+>>>>>>> templating
             },
             "funding": [
                 {
@@ -3095,6 +3173,29 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
+            "install-path": "../symfony/polyfill-php73"
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.23.1",
+            "version_normalized": "1.23.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "time": "2021-07-28T13:41:28+00:00",
+=======
             "install-path": "../symfony/polyfill-php80"
         },
         {
@@ -3139,6 +3240,7 @@
                 "symfony/yaml": "For using the YAML loader"
             },
             "time": "2021-08-04T21:42:42+00:00",
+>>>>>>> templating
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3152,7 +3254,11 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
+                    "Symfony\\Polyfill\\Php80\\": ""
+=======
                     "Symfony\\Component\\Routing\\": ""
+>>>>>>> templating
                 },
                 "files": [
                     "bootstrap.php"
@@ -3179,6 +3285,18 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
+<<<<<<< HEAD
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+=======
             "description": "Maps an HTTP request to a set of configuration variables",
             "homepage": "https://symfony.com",
             "keywords": [
@@ -3189,6 +3307,7 @@
             ],
             "support": {
                 "source": "https://github.com/symfony/routing/tree/v5.3.7"
+>>>>>>> templating
             },
             "funding": [
                 {
@@ -3204,6 +3323,160 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
+            "install-path": "../symfony/polyfill-php80"
+        },
+        {
+            "name": "symfony/routing",
+=======
+            "install-path": "../symfony/routing"
+        },
+        {
+            "name": "symfony/var-dumper",
+>>>>>>> templating
+            "version": "v5.3.7",
+            "version_normalized": "5.3.7.0",
+            "source": {
+                "type": "git",
+<<<<<<< HEAD
+                "url": "https://github.com/symfony/routing.git",
+                "reference": "be865017746fe869007d94220ad3f5297951811b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/be865017746fe869007d94220ad3f5297951811b",
+                "reference": "be865017746fe869007d94220ad3f5297951811b",
+=======
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "3ad5af4aed07d0a0201bbcfc42658fe6c5b2fb8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3ad5af4aed07d0a0201bbcfc42658fe6c5b2fb8f",
+                "reference": "3ad5af4aed07d0a0201bbcfc42658fe6c5b2fb8f",
+>>>>>>> templating
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+<<<<<<< HEAD
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "doctrine/annotations": "<1.12",
+                "symfony/config": "<5.3",
+                "symfony/dependency-injection": "<4.4",
+                "symfony/yaml": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.12",
+                "psr/log": "^1|^2|^3",
+                "symfony/config": "^5.3",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/expression-language": "^4.4|^5.0",
+                "symfony/http-foundation": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/config": "For using the all-in-one router or any loader",
+                "symfony/expression-language": "For using expression matching",
+                "symfony/http-foundation": "For using a Symfony Request object",
+                "symfony/yaml": "For using the YAML loader"
+            },
+            "time": "2021-08-04T21:42:42+00:00",
+=======
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<5.4.3",
+                "symfony/console": "<4.4"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/process": "^4.4|^5.0",
+                "twig/twig": "^2.13|^3.0.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-intl": "To show region name in time zone dump",
+                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+            },
+            "time": "2021-08-04T23:19:25+00:00",
+            "bin": [
+                "Resources/bin/var-dump-server"
+            ],
+>>>>>>> templating
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+<<<<<<< HEAD
+                    "Symfony\\Component\\Routing\\": ""
+=======
+                    "Symfony\\Component\\VarDumper\\": ""
+>>>>>>> templating
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+<<<<<<< HEAD
+            "description": "Maps an HTTP request to a set of configuration variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "router",
+                "routing",
+                "uri",
+                "url"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/routing/tree/v5.3.7"
+=======
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/v5.3.7"
+>>>>>>> templating
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+<<<<<<< HEAD
             "install-path": "../symfony/routing"
         },
         {
@@ -3235,66 +3508,7 @@
                 "symfony/console": "^4.4|^5.0",
                 "symfony/process": "^4.4|^5.0",
                 "twig/twig": "^2.13|^3.0.4"
-            },
-            "suggest": {
-                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
-                "ext-intl": "To show region name in time zone dump",
-                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
-            },
-            "time": "2021-08-04T23:19:25+00:00",
-            "bin": [
-                "Resources/bin/var-dump-server"
-            ],
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "files": [
-                    "Resources/functions/dump.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Component\\VarDumper\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "debug",
-                "dump"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.3.7"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
+=======
             "install-path": "../symfony/var-dumper"
         },
         {
@@ -3375,6 +3589,14 @@
                 "symfony/debug": "^3.4|^4.2|^5.0",
                 "symfony/phpunit-bridge": "^4.4@dev|^5.0"
             },
+            "time": "2019-11-15T20:38:32+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+>>>>>>> templating
+            },
             "suggest": {
                 "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
                 "ext-intl": "To show region name in time zone dump",
@@ -3385,16 +3607,23 @@
                 "Resources/bin/var-dump-server"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
             "installation-source": "dist",
             "autoload": {
+<<<<<<< HEAD
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+=======
                 "psr-4": {
                     "Twig\\": "src/"
                 }
+>>>>>>> templating
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3402,6 +3631,10 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+=======
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com",
                     "homepage": "http://fabien.potencier.org",
@@ -3411,6 +3644,7 @@
                     "name": "Twig Team",
                     "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
+>>>>>>> templating
                 },
                 {
                     "name": "Armin Ronacher",
@@ -3418,6 +3652,16 @@
                     "role": "Project Founder"
                 }
             ],
+<<<<<<< HEAD
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/v5.3.7"
+=======
             "description": "Twig, the flexible, fast, and secure template language for PHP",
             "homepage": "https://twig.symfony.com",
             "keywords": [
@@ -3426,6 +3670,7 @@
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
                 "source": "https://github.com/twigphp/Twig/tree/v3.0.0"
+>>>>>>> templating
             },
             "install-path": "../twig/twig"
         },
@@ -3478,6 +3723,113 @@
                     "email": "bschussek@gmail.com"
                 }
             ],
+<<<<<<< HEAD
+            "install-path": "../symfony/var-dumper"
+        },
+        {
+            "name": "theseer/tokenizer",
+            "version": "1.2.1",
+            "version_normalized": "1.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theseer/tokenizer.git",
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/34a41e998c2183e22995f158c581e7b5e755ab9e",
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "time": "2021-07-28T10:34:58+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
+            "support": {
+                "issues": "https://github.com/theseer/tokenizer/issues",
+                "source": "https://github.com/theseer/tokenizer/tree/1.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/theseer",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../theseer/tokenizer"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.10.0",
+            "version_normalized": "1.10.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozarts/assert.git",
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/6964c76c7804814a842473e0c8fd15bab0f18e25",
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<0.12.20",
+                "vimeo/psalm": "<4.6.1 || 4.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.13"
+            },
+            "time": "2021-03-09T10:59:23+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+=======
+>>>>>>> templating
             "description": "Assertions to validate method input/output with nice error messages.",
             "keywords": [
                 "assert",

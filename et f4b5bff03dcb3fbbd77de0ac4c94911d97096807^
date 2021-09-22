@@ -1,0 +1,164 @@
+[33mcommit e9458cdc8816b1ef9b6910fe669f9af15d303711[m[33m ([m[1;36mHEAD -> [m[1;32mtestNiels[m[33m, [m[1;31morigin/testNiels[m[33m)[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 22 09:29:56 2021 +0200
+
+    vkljk
+
+[33mcommit 5b1556e701a3be86cda47458c0158e4f3ea11d82[m
+Merge: b462b05 f4b5bff
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 21 11:04:07 2021 +0200
+
+    merge
+
+[33mcommit f4b5bff03dcb3fbbd77de0ac4c94911d97096807[m[33m ([m[1;31morigin/templating[m[33m, [m[1;32mtemplating[m[33m)[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 21 10:41:43 2021 +0200
+
+    last changes
+
+[33mcommit 9754db66bef47ea31f0254c79eed236e51351fc3[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 21 10:21:30 2021 +0200
+
+    update templating
+
+[33mcommit b462b0515e3eb07b0015feeac5d175fe49234cf9[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 21 07:56:24 2021 +0200
+
+    switch to poo
+
+[33mcommit 9d0b81accc2935fbf6759d6687772b3dadcd349b[m
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Sat Sep 18 05:25:16 2021 +0200
+
+    add twig templating, switch render function, add routing description
+
+[33mcommit ac668a19c170e08cbd5c03ca00441c2497ff713c[m
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Fri Sep 17 21:47:34 2021 +0200
+
+    practicing mvc
+
+[33mcommit d207b56c2a3da994e51975d7fd7b56842d22da88[m
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Fri Sep 17 03:33:03 2021 +0200
+
+    Making controllers
+
+[33mcommit f94e5b6fa260fb42a4a95efc81bfefb6f696aaff[m
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Thu Sep 16 07:00:16 2021 +0200
+
+    need controller resolver to code with classes controllers
+
+[33mcommit 645aac8c9cbdb7584765f4d071153d98a02ce9d8[m
+Merge: e8f51d5 0fa6a67
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Wed Sep 15 21:24:51 2021 +0200
+
+    merged and fixed conflicts from testNiels work
+
+[33mcommit 0fa6a67ad130f5a6f6e9085be81ce8b29589eca6[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 15 17:05:09 2021 +0200
+
+    lastWork
+
+[33mcommit 4fe207287cac899eabc0b2f790d71c320574b8fe[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 15 14:55:18 2021 +0200
+
+    now
+
+[33mcommit 8782fd10764a3bbbc76fd3c7a53e612a33cb3f32[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 15 12:01:52 2021 +0200
+
+    mercredi
+
+[33mcommit e8f51d5a5b226d76a6bbba47f0b5243a8928ef33[m
+Merge: aa6ec5e f07e976
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Tue Sep 14 18:03:27 2021 +0200
+
+    good job, need review
+
+[33mcommit aa6ec5e2c036ec73056b1037a27a8a478faa4796[m
+Author: Seymos76 <louisthomas76750@gmail.com>
+Date:   Tue Sep 14 16:36:07 2021 +0200
+
+    refacto
+
+[33mcommit f07e9764af487f2b278832c155ac785f4858320a[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 14 16:27:12 2021 +0200
+
+    louis
+
+[33mcommit 27212ee6b4fc67dad0c999e81fd84bab786fef6e[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 14 12:45:43 2021 +0200
+
+    checkLouis
+
+[33mcommit 66b5cbcbb01234adfdbbda47a1cee20314534a51[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 14 10:36:38 2021 +0200
+
+    testPoo
+
+[33mcommit 8f2b8069531e165deef4c570f2bf5722c36ea44b[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Mon Sep 13 11:51:49 2021 +0200
+
+    failed
+
+[33mcommit a7d1baa574e040005e6a32e9e46fd114d1c66278[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Fri Sep 10 10:09:33 2021 +0200
+
+    newModif
+
+[33mcommit 2cacb89a16d8989ddca772584a742b37194210ec[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Fri Sep 10 08:39:55 2021 +0200
+
+    test
+
+[33mcommit 98709336336141eccea460984a844a7a9ba7e2af[m[33m ([m[1;31morigin/poo[m[33m, [m[1;31morigin/niels[m[33m, [m[1;31morigin/need_review[m[33m)[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Sep 7 16:17:01 2021 +0200
+
+    mardi
+
+[33mcommit 3818467338548be2fcd2d08d7c8aec4173364aee[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Sat Sep 4 16:02:32 2021 +0200
+
+    samedi
+
+[33mcommit 2b140dcb1059b311af787ace81fa4fa21abbb744[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Thu Sep 2 20:01:34 2021 +0200
+
+    jeudi
+
+[33mcommit dca7470c95e704629aa0c054f12c27e2cef4e9b4[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 1 18:57:14 2021 +0200
+
+    mercredi
+
+[33mcommit 49f6b8aadc93ab39efdde66d07432784d8f0fcee[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Wed Sep 1 18:55:12 2021 +0200
+
+    sessionUser
+
+[33mcommit 93bc6202515d1f2880328f04b35f9345afb8b944[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: NielsPouchard <nielspouchard@gmail.com>
+Date:   Tue Aug 31 18:10:37 2021 +0200
+
+    projetFakebook
